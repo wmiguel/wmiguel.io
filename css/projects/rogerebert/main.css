@@ -1,0 +1,142 @@
+body {
+  background-image: url(../../../images/projects/rogerebert/life-itself-background.jpg);
+  background-color: #0c0c0c;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: 'Robot', sans-serif;
+  color: #1d2b36;
+}
+
+#home {
+  font-size:25px !important;
+  color: #efefef;
+  padding-right: 5px;
+}
+
+.fa {
+  font-size:25px !important;
+  color: rgba(166, 133, 89);
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: 'Noto Serif', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #efefef;
+}
+
+h2 {
+  font-family: 'Noto Serif', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  color: #1a98c0;
+}
+
+a:hover {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #1f7b98;
+}
+
+form {
+  margin-top: 25px;
+}
+
+#errorImage img {
+  width: 100%;
+}
+
+#main-div {
+  text-align:center;
+  background-color: rgba(166, 133, 89, .9);
+  padding: 50px 75px;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#modal-header {
+  background-color: rgba(166, 133, 89);
+  color: #ffffff;
+}
+
+#results {
+  padding: 25px 50px;
+}
+
+#omdbInfo {
+  padding:25px 10px;
+  margin-bottom:15px;
+  background-color:#f6f3ee;
+}
+
+#omdbImage {
+  text-align:center;
+}
+
+#omdbData {
+  margin-bottom:15px;
+}
+
+#omdbImgLink {
+  max-height: 200px;
+  width: 100%;
+}
+
+#omdbRYDG {
+  margin-bottom: 10px;
+}
+
+#omdbDirector {
+  margin-bottom: 10px;
+}
+
+#ebertReview {
+  margin-bottom:15px;
+
+  font-size: 18px;
+  line-height: 2;
+}
+
+#youtube {
+  text-align: center;
+  margin: 0 auto;
+}
+
+iframe {
+  margin: 0 auto;
+  display: block;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  padding: 10px 25px;
+  text-align: right;
+  color: #ededed;
+
+}

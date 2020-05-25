@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- My Custom CSS -->
+    <link rel="stylesheet" href="../css/projects/rogerebert/main.css">
+
+    <title>What Did Roger Ebert Say?</title>
+  </head>
+  <body>
+
+    <!-- The Popup Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+          <!-- The Top Header of the Modal -->
+          <div id="modal-header" class="modal-header">
+            <h5 class="modal-title" id="modal-title">What Did Roger Ebert Say?</h5>
+            <button id="closeModalButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- The Body of the Modal -->
+          <div class="modal-body" id="results">
+
+            <!-- Everything inside container-fluid will be replaced during usage -->
+            <div class="container-fluid">
+              <!-- Error Text -->
+              <div id="errorText" class="row">
+                <h2>Oops! What You're Looking For Hasn't Been Reviewed</h2>
+              </div>
+
+              <!-- Error Picture of Roger Ebert -->
+              <div id="errorImage" class="row">
+                <img src="../images/projects/rogerebert/error-roger.jpg">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- The Container -->
+    <div class="container">
+      <div class="row" id="main-div">
+        <div class="col-lg">
+          <!-- Stars -->
+          <i id="home" class="fa fa-star"></i> <i id="home" class="fa fa-star"></i> <i id="home" class="fa fa-star"></i> <i id="home" class="fa fa-star"></i>
+          <!-- Webapp Title + Info -->
+          <h1 style="">What Did Roger Ebert Say?</h1>
+          <h4 class="mb-4">Roger Ebert reviewed over 4,000 movies in his lifetime. Let's find out what he said!</h4>
+          <!-- The Search Form -->
+          <form autocomplete="off" class="input-group mb-3">
+            <input id="movie" type="text" class="form-control form-control-lg" placeholder="Search for a Movie" >
+            <div class="input-group-append">
+              <button id="movieForm" class="btn btn-outline-success input-group-text" data-toggle="modal" data-target="#modal" data-backdrop="static" data-keyboard="false" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Footer -->
+    <footer>Site by <a href="https://wmiguel.io/">William Miguel</a></footer>
+
+    <!-- All JS Scripts can be found here  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase.js"></script>
+
+    <!-- Holds all JS functions -->
+    <script src="../js/projects/rogerebert/main.js"></script>
+
+    <!-- Holds array of reviews from Roger Ebert -->
+    <script src="../js/projects/rogerebert/reviews.js"></script>
+
+  </body>
+</html>
