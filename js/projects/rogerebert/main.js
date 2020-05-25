@@ -198,7 +198,7 @@ $(document).ready(function(){
             $(errorImage).appendTo(reset);
 
                 var errorImg = document.createElement('img');
-                errorImg.setAttribute('src', '../../images/error-roger.jpg');
+                errorImg.setAttribute('src', '../../images/projects/rogerebert/error-roger.jpg');
                 $(errorImg).appendTo(errorImage);
       }, 2000);
 
