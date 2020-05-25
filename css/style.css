@@ -32,3 +32,27 @@ a:hover {
   color: #4cb9e2;
   text-decoration: none;
 }
+
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 768px) {
+  #introduction {
+    background-color: rgba(250,250,250,.75);
+    width: 65%;
+    padding: 25px 50px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+  }
+}
+
+/* For screens that are 425px wide or less */
+@media screen and (max-width: 425px) {
+  #introduction {
+    background-color: rgba(250,250,250,.75);
+    width: 70%;
+    padding: 25px 50px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+  }
+}
