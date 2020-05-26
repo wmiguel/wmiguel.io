@@ -139,7 +139,7 @@ $(document).ready(function(){
                     omdbColumnPlot.appendChild(plotText);
                     omdbPlot.appendChild(omdbColumnPlot);
 
-        // Here we insert the Review, Url Link, and YouTube Link
+        // Here we insert the Review, and Url Link
         // into the Modal from Our review.js
 
         var ebertReview = document.createElement('div');
@@ -158,18 +158,7 @@ $(document).ready(function(){
             ebertLinkA.appendChild(linkArray);
             ebertReview.appendChild(ebertLinkA);
 
-        var youtube = document.createElement('div');
-        youtube.id = 'youtube';
-        youtube.className = 'row';
-        container.appendChild(youtube);
-
-            var iframeElement = document.createElement('iframe');
-            iframeElement.setAttribute('frameBorder', '0');
-            iframeElement.className = 'embed-responsive-item';
-            iframeElement.setAttribute('src', filtered[0].YouTube);
-            youtube.appendChild(iframeElement);
-
-      }
+          }
     })
 
     // This function activates when we close the modal
@@ -198,9 +187,9 @@ $(document).ready(function(){
             $(errorImage).appendTo(reset);
 
                 var errorImg = document.createElement('img');
-                errorImg.setAttribute('src', '../../images/projects/rogerebert/error-roger.jpg');
+                errorImg.setAttribute('src', '../images/projects/rogerebert/error-roger.jpg');
                 $(errorImg).appendTo(errorImage);
-      }, 2000);
+      }, 1500);
 
 
     });

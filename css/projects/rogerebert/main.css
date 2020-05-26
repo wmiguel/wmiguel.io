@@ -76,6 +76,10 @@ form {
   transform: translate(-50%, -50%) scale(1);
 }
 
+.form-control-lg {
+  font-size: 1rem;
+}
+
 #modal-header {
   background-color: rgba(166, 133, 89);
   color: #ffffff;
@@ -119,11 +123,6 @@ form {
   line-height: 2;
 }
 
-#youtube {
-  text-align: center;
-  margin: 0 auto;
-}
-
 iframe {
   margin: 0 auto;
   display: block;
@@ -139,4 +138,50 @@ footer {
   text-align: right;
   color: #ededed;
 
+}
+
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 768px) {
+  #main-div {
+    background-color: rgba(166, 133, 89, .9);
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h4 {
+    font-size: 1.25em;
+  }
+}
+
+/* For screens that are 425px wide or less */
+@media screen and (max-width: 425px) {
+  #main-div {
+    background-color: rgba(166, 133, 89, .9);
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
 }
