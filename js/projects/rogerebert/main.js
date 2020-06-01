@@ -74,44 +74,34 @@ $(document).ready(function(){
 
         var container = Handlebars.compile(`
           <div class="container-fluid">
-
             <div id="omdbInfo" class="row">
-
               <div id="omdbImage" class="col-sm-3 order-lg-1 order-md-1 order-12">
                 <img id="omdbImgLink" src="{{getPoster}}">
               </div>
-
               <div id="omdbData" class="col-sm-9 order-lg-12 order-md-12 order-1">
-
                 <div id="omdbTitle" class="row">
                   <div class="col">
                     <h2>{{getTitle}}</h2>
                     ${stars}
                   </div>
                 </div>
-
                 <div id="omdbRYDG" class="row">
                   <div class="col">{{getRated}} | {{getYear}} | {{getRuntime}} | {{getGenre}}</div>
                 </div>
-
                 <div id="omdbDirector" class="row">
                   <div class="col">Directed by: {{getDirector}}</div>
                 </div>
-
                 <div id="omdbPlot" class="row">
                   <div class="col">{{getPlot}}</div>
                 </div>
-
               </div>
-
             </div>
-
             <div id="ebertReview" class="row">
               <p>{{getEbertReview}}</p>
               <a href="{{getEbertLink}}">Continue Reading on RogerEbert.com</a>
             </div>
-
-          </div>`);
+          </div>`
+        );
 
 
 
