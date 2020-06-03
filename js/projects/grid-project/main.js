@@ -13,7 +13,8 @@ $(document).ready(function(){
         <div id="albumArts" class="row">
 
           <div id="albumOriginal" class="col-6">
-            <img id="omdbImgLink" src="file:///Users/wmiguel/Sites/wmiguel.io/${original}">
+            <img id="omdbImgLink" src="https://wmiguel.io/${original}">
+            <!-- <img id="omdbImgLink" src="file:///Users/wmiguel/Sites/wmiguel.io/${original}"> -->
           </div>
 
           <div id="albumGrid" class="col-6">
@@ -42,7 +43,7 @@ $(document).ready(function(){
       var gridListed = Handlebars.compile(`
         <div id="gridListed" class="row">
           <div id="albumArt" class="col-sm-2">
-            <img src="file:///Users/wmiguel/Sites/wmiguel.io/${original}">
+            <img src="https://wmiguel.io/${original}">
           </div>
           <div id="albumTitle" class="col-sm-10">
             <div id="artist"><p>${artist}</p></div>
