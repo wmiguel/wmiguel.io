@@ -33,6 +33,7 @@ h2 {
 p {
   font-family: 'Roboto Mono', monospace;
   color: #666666;
+  margin-bottom: 0;
 }
 
 span {
@@ -46,7 +47,11 @@ span {
   background-color: black;
   margin: auto;
   padding: 15px;
-  text-align: center;
+  text-align: justify;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h2 {
@@ -54,8 +59,26 @@ span {
   margin: 0;
 }
 
+.header a {
+  color: pink;
+  text-decoration: none;
+}
+
+.about-button {
+  vertical-align: bottom;
+  position:relative; /* Anything but static */
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  line-height: 1em;
+  background-color: #91b2d2;
+  border: none;
+  border-radius: 50%;
+}
+
 .container {
-  /* background-color: red; */
   height: 600px;
 
   position: absolute;
@@ -68,10 +91,18 @@ span {
 .col-4 {
   height: 600px;
   overflow: auto!important;
+  padding-right: 0px;
+  /* padding: 0; */
+}
+
+.col-8 {
+  padding-left: 0px;
+  padding-right: 0px;
+  /* padding: 0; */
 }
 
 .gridProject {
-  background-color: green;
+  background-color: rgba(255, 255, 0, 0.25);
   position: absolute;
   top: 20%;
   left: 0;
@@ -81,7 +112,38 @@ span {
 
 #gridListed {
   background-color: #efefef;
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+#gridListed:hover {
+  background-color: #dedede;
+}
+
+#albumArts {
+  padding: 0;
+  margin: 0;
+}
+
+#albumArt {
+  padding: 0px 5px 0px 5px;
+}
+
+#titleYear p {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+#albumOriginal {
+  padding: 0 10px 0 0;
+}
+
+#albumGrid {
+  padding: 0 0 0 10px;
 }
 
 #albumData {

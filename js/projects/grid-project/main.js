@@ -10,7 +10,7 @@ $(document).ready(function(){
     var gridProject = Handlebars.compile(`
       <div class="gridProject">
 
-        <div id="albumArt" class="row">
+        <div id="albumArts" class="row">
 
           <div id="albumOriginal" class="col-6">
             <img id="omdbImgLink" src="file:///Users/wmiguel/Sites/wmiguel.io/${original}">
@@ -24,7 +24,8 @@ $(document).ready(function(){
 
         <div id="albumData">
           <h2>${artist}</h2>
-          <h1>${title} <span>${year}</span></h1>
+          <h1>${title}</h1>
+          <span>${year}</span>
         </div>
 
       </div>`);
@@ -44,7 +45,8 @@ $(document).ready(function(){
             <img src="file:///Users/wmiguel/Sites/wmiguel.io/${original}">
           </div>
           <div id="albumTitle" class="col-sm-10">
-            <p>${artist} - <i>${title}</i> <span>${year}</span></p>
+            <div id="artist"><p>${artist}</p></div>
+            <div id="titleYear"><p><i>${title}</i></p></div>
           </div>
         </div>
         `);
