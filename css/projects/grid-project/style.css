@@ -64,7 +64,7 @@ span {
 
 .about-button {
   vertical-align: bottom;
-  position:relative; /* Anything but static */
+  position:relative; /* Anything but static! */
   width: 1.5em;
   height: 1.5em;
   display: inline-block;

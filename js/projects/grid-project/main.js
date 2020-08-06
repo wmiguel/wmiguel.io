@@ -1,4 +1,5 @@
 function elementClicked(i) {
+
   var bigOriginal = gridAlbumArt[i].Original;
   var bigGrid = gridAlbumArt[i].Grid;
   var bigArtist = gridAlbumArt[i].Artist;
