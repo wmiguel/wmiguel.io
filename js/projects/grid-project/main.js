@@ -12,14 +12,8 @@ function elementClicked(i) {
   var gridImage = document.getElementById("gridImage");
   gridImage.src = "https://wmiguel.io/" + bigGrid;
 
-  var artistReplace = document.getElementById("artist");
-  artistReplace.innerHTML = bigArtist;
-
-  var titleReplace = document.getElementById("title");
-  titleReplace.innerHTML = bigTitle;
-
-  var yearReplace = document.getElementById("year");
-  yearReplace.innerHTML = bigYear;
+  var backgroundReplace = document.querySelector(".background-image");
+  backgroundReplace.style.backgroundImage = "url(https://wmiguel.io/" + bigOriginal + ")";
 }
 
 $(document).ready(function(){
@@ -29,6 +23,9 @@ $(document).ready(function(){
     var artist = gridAlbumArt[7].Artist;
     var original = gridAlbumArt[7].Original;
     var grid = gridAlbumArt[7].Grid;
+
+    var backgroundReplace = document.querySelector(".background-image");
+    backgroundReplace.style.backgroundImage = "url(https://wmiguel.io/" + original + ")";
 
     var gridProject = Handlebars.compile(`
       <div class="gridProject">
@@ -40,12 +37,6 @@ $(document).ready(function(){
           <div id="albumGrid" class="col-6">
             <img id="gridImage" src="https://wmiguel.io/${grid}">
           </div>
-        </div>
-
-        <div id="albumData">
-          <h2 id="artist">${artist}</h2>
-          <h1 id="title">${title}</h1>
-          <span id="year">${year}</span>
         </div>
 
       </div>`);
