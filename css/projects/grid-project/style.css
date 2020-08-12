@@ -1,10 +1,23 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background: #1F1F1F;
+  display: block;
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+div, nav {
+  display: block;
 }
 
 img {
