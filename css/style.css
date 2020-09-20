@@ -5,19 +5,98 @@ html {
 
 body {
   background-color: #22252D;
+  margin: 0;
 }
 
 #introduction {
-  background-color: rgba(250,250,250);
-  padding: 25px 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 
   text-align: center;
   margin: auto;
+
+  background-color: rgba(250,250,250);
+  padding: 25px 50px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-auto-rows: minmax(95px, auto);
+  grid-gap: 25px;
+
   position: absolute;
-  top: 45%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
+
+  text-align: center;
+  margin: auto;
+  padding: 50px 0;
+}
+
+#container > * {
+  background-color: #efefef;
+}
+
+#container > *:hover {
+  background-color: #d1d1d1;
+}
+
+#project {
+  padding: 15px 15px;
+  margin: auto;
+}
+
+#project img {
+  width: 55%;
+  /* background: #ef785a; */
+}
+
+.inprogress {
+  opacity: 50%;
+  pointer-events: none;
+  cursor: default;
+}
+
+.header {
+  background-color: black;
+  margin: auto;
+  padding: 15px;
+  text-align: justify;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 1000;
+}
+
+.header h2 {
+  color: white;
+  margin: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.about-button {
+  vertical-align: bottom;
+  position:relative; /* Anything but static! */
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  line-height: 1em;
+  background-color: #91b2d2;
+  border: none;
+  border-radius: 50%;
 }
 
 h1 {
@@ -27,8 +106,10 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 500;
+  font-size: 1rem;
+
   color: #666666;
 }
 
