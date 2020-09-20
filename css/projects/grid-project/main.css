@@ -81,12 +81,17 @@ p {
 }
 
 .header h2 {
-  color: white;
   margin: 0;
+  color: #666666;
 }
 
 .header a {
   color: white;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #4cb9e2;
   text-decoration: none;
 }
 
