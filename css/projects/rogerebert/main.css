@@ -128,18 +128,6 @@ iframe {
   display: block;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-
-  padding: 10px 25px;
-  text-align: right;
-  color: #ededed;
-
-}
-
 .header {
   background-color: black;
   margin: auto;
