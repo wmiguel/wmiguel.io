@@ -3,49 +3,24 @@
 }
 
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  background: #1F1F1F;
-  display: block;
-  margin: 0;
-  line-height: 1.5;
-  text-align: left;
-}
-
-div, nav {
+body, div, nav {
   display: block;
 }
 
 img {
   width: 100%;
-}
-
-h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  margin-bottom: 0;
-
-  color: #ffffff;
-}
-
-h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  font-size: 1rem;
-
-  color: #ffffff;
+  vertical-align: middle;
+  border-style: none;
 }
 
 p {
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   color: #666666;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .background-image {
@@ -66,50 +41,9 @@ p {
   filter: blur(50px);
 }
 
-.header {
-  background-color: black;
-  margin: auto;
-  padding: 15px;
-  text-align: justify;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-  z-index: 1000;
-}
-
-.header h2 {
-  margin: 0;
-  color: #666666;
-}
-
-.header a {
-  color: white;
-  text-decoration: none;
-}
-
-.header a:hover {
-  color: #4cb9e2;
-  text-decoration: none;
-}
-
-.about-button {
-  vertical-align: bottom;
-  position:relative; /* Anything but static! */
-  width: 1.5em;
-  height: 1.5em;
-  display: inline-block;
-  color: white;
-  font-weight: bold;
-  line-height: 1em;
-  background-color: #91b2d2;
-  border: none;
-  border-radius: 50%;
-}
-
 .container {
+  width: 100%;
+  margin: 0;
   height: 50%;
 
   position: absolute;
@@ -119,7 +53,7 @@ p {
   right: 50%;
   -ms-transform: translateX(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 50px 0 0 0;
+  padding: 0;
 }
 
 .row {
@@ -128,27 +62,33 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.col-md-4 {
+#albumArt, #albumCollection, #albumOriginal, #albumGrid, #albumDisplay, #albumTitle {
+  position: relative;
+  width: 100%;
+}
+
+#albumCollection {
   height: 600px;
   overflow: auto!important;
   padding: 0 0 0 25px;
 }
 
-.col-md-8 {
-  padding-left: 0px;
-  padding-right: 0px;
-  /* padding: 0; */
+#albumOriginal, #albumGrid {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
-.gridProject {
+#albumDisplay {
+  padding: 0;
 }
 
 #gridListed {
   background-color: #efefef;
-  margin: 10px 0px 10px 0px;
-  padding: 5px 0px 5px 0px;
+  margin: 10px 0px;
+  padding: 5px 0px;
 }
 
 #gridListed:hover {
@@ -166,6 +106,18 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+#albumTitle {
+  padding: 0 15px;
+
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
 }
 
 #titleYear p {
@@ -182,26 +134,69 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /* align-items: center; */
+  /* overflow: hidden; */
+}
+
+#albumOriginal img {
+  /* width: auto; */
+  /* height: 100%; */
 }
 
 #albumGrid {
   padding: 0 0 0 10px;
 }
 
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 65%!important;
+.animate {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 320px) {
+  #albumCollection {
+    height: 45vh;
+    padding: 25px;
+  }
+  #albumDisplay {
+    padding: 0 25px;
   }
 }
 
-@media (min-width: 1980px) {
-  p {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.25rem;
-    color: #666666;
-    margin-bottom: 0;
+/* --- iPads --- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 80%;
+  }
+
+  #albumDisplay {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  #albumCollection {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
   }
 }
+
+/* --- Desktops and Laptops --- */
+@media (min-width: 1224px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* --- Large Screens --- */
+@media (min-width: 1824px) {
+  .container {
+    max-width: 65%;
+  }
+}
+
 
 @media (min-height:980px) {
   .container {

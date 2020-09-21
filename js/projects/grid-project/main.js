@@ -18,50 +18,51 @@ function elementClicked(i) {
 
 $(document).ready(function(){
 
-    var title = gridAlbumArt[7].Title;
-    var year = gridAlbumArt[7].Year;
-    var artist = gridAlbumArt[7].Artist;
-    var original = gridAlbumArt[7].Original;
-    var grid = gridAlbumArt[7].Grid;
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  var random = getRandomInt(37);
 
-    var backgroundReplace = document.querySelector(".background-image");
-    backgroundReplace.style.backgroundImage = "url(https://wmiguel.io/" + original + ")";
+  var original = gridAlbumArt[random].Original;
+  var grid = gridAlbumArt[random].Grid;
 
-    var gridProject = Handlebars.compile(`
-      <div class="gridProject">
-        <div id="albumArts" class="row">
-          <div id="albumOriginal" class="col-6">
-            <img id="originalImage" src="https://wmiguel.io/${original}">
-          </div>
+  var backgroundReplace = document.querySelector(".background-image");
+  backgroundReplace.classList.add("animate");
+  backgroundReplace.style.backgroundImage = "url(https://wmiguel.io/" + original + ")";
 
-          <div id="albumGrid" class="col-6">
-            <img id="gridImage" src="https://wmiguel.io/${grid}">
-          </div>
+  var gridProject = Handlebars.compile(`
+    <div class="gridProject">
+      <div id="albumArts" class="row">
+        <div id="albumOriginal" class="col-6">
+          <img id="originalImage" src="https://wmiguel.io/${original}">
         </div>
 
+        <div id="albumGrid" class="col-6">
+          <img id="gridImage" src="https://wmiguel.io/${grid}">
+        </div>
+      </div>
+    </div>`);
+  $('#albumDisplay').append(gridProject());
+
+  for (var j = 0; j < gridAlbumArt.length; j++) {
+
+    var titleList = gridAlbumArt[j].Title;
+    var yearList = gridAlbumArt[j].Year;
+    var artistList = gridAlbumArt[j].Artist;
+    var originalList = gridAlbumArt[j].Original;
+    var gridList = gridAlbumArt[j].Grid;
+
+    var gridListed = Handlebars.compile(`
+      <div id="gridListed" class="row" onclick="elementClicked(${j});">
+        <div id="albumArt">
+          <img src="https://wmiguel.io/${originalList}">
+        </div>
+        <div id="albumTitle">
+          <div id="artist"><p>${artistList}</p></div>
+          <div id="titleYear"><p><i>${titleList}</i></p></div>
+        </div>
       </div>`);
-    $('div.col-md-8').append(gridProject());
-
-    for (var j = 0; j < gridAlbumArt.length; j++) {
-
-      var titleList = gridAlbumArt[j].Title;
-      var yearList = gridAlbumArt[j].Year;
-      var artistList = gridAlbumArt[j].Artist;
-      var originalList = gridAlbumArt[j].Original;
-      var gridList = gridAlbumArt[j].Grid;
-
-      var gridListed = Handlebars.compile(`
-        <div id="gridListed" class="row" onclick="elementClicked(${j});">
-          <div id="albumArt" class="col-sm-2">
-            <img src="https://wmiguel.io/${originalList}">
-          </div>
-          <div id="albumTitle" class="col-sm-10">
-            <div id="artist"><p>${artistList}</p></div>
-            <div id="titleYear"><p><i>${titleList}</i></p></div>
-          </div>
-        </div>
-        `);
-      $('div.col-md-4').append(gridListed());
-    };
+    $('#albumCollection').append(gridListed());
+  };
 
 });
