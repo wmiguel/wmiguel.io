@@ -14,7 +14,7 @@
 
 #container {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(95px, auto);
   grid-gap: 25px;
 
@@ -95,10 +95,6 @@ a:hover {
   h1 {
     font-size: 1.5em;
   }
-
-  h2 {
-    font-size: 1.25em;
-  }
 }
 
 /* For screens that are 425px wide or less */
@@ -118,5 +114,11 @@ a:hover {
 
   h2 {
     font-size: 1.25em;
+  }
+}
+
+@media (max-width: 768px) {
+  #container {
+    width: 85%;
   }
 }
