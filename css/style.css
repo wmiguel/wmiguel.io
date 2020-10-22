@@ -1,74 +1,66 @@
-#introduction {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-
-  text-align: center;
-  margin: auto;
-
-  background-color: rgba(250,250,250);
-  padding: 25px 50px;
+#wm-content {
+  margin: calc(75px + 15vh) auto;
+  width: 50%;
+  max-width: 1080px;
 }
 
-#container {
+#wm-content > section {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+#wm-directory {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(95px, auto);
   grid-gap: 25px;
-
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-
-  text-align: center;
-  margin: auto;
-  padding: 50px 0;
 }
 
-#container > * {
-  background-color: #efefef;
+#wm-directory > a:hover {
+  background-color: #4cb9e2;
 }
 
-#container > *:hover {
-  background-color: #d1d1d1;
+#wm-project {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  padding: 5px;
 }
 
-#project {
-  padding: 15px 15px;
-  margin: auto;
+#wm-project p {
+  text-align: left;
+  margin-block-end: 0rem;
 }
 
-#project img {
-  width: 55%;
-  /* background: #ef785a; */
-}
-
-.inprogress {
+.in-progress {
   opacity: 50%;
   pointer-events: none;
   cursor: default;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  color: #444444;
+  color: #efefef;
+}
+
+h1, h2, p {
+  margin-block-start: 0rem;
+  margin-block-end: 1.25rem;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: normal;
 }
 
 h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  font-size: 1rem;
-
-  color: #666666;
+  font-size: 1.75rem;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
   font-weight: 400;
-  color: #666666;
+  color: #efefef;
 }
 
 a {
@@ -82,43 +74,47 @@ a:hover {
 }
 
 /* For screens that are 768px wide or less */
-@media screen and (max-width: 768px) {
-  #introduction {
-    background-color: rgba(250,250,250);
-    width: 67%;
-    padding: 25px 40px;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-  }
+@media screen and (max-width: 1080px) {
+  #wm-content { width: 65%; }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.5rem; }
+  p  { font-size: 1.15rem; }
+  .header { display: flex; }
+  .header-mobile { display: none; }
+}
 
-  h1 {
-    font-size: 1.5em;
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 768px) {
+  #wm-content {
+    margin: calc(75px + 5vh) auto;
+    width: 80%;
   }
+  #wm-directory {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.25rem; }
+  p  { font-size: 1rem; }
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
 }
 
 /* For screens that are 425px wide or less */
-@media screen and (max-width: 425px) {
-  #introduction {
-    background-color: rgba(250,250,250);
-    width: 58%;
-    padding: 25px 35px;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.25em;
-  }
-}
-
-@media (max-width: 768px) {
-  #container {
+@media screen and (max-width: 450px) {
+  #wm-content {
+    margin: calc(75px + 5vh) auto;
     width: 85%;
   }
+  #wm-directory {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
+  }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  p  { font-size: 1rem; }
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
 }

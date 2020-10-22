@@ -15,84 +15,117 @@
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
-
   <body>
 
-    <!-- Main Elements Here -->
+    <!-- Navbars -->
     <nav class="header">
-      <h2><a href="https://wmiguel.io/">William Miguel</a> | Projects</h2>
-      <button class="about-button">i</button>
+      <div class="title">
+        <h2><a href="https://wmiguel.io/">William Miguel</a> | Graphic Design & Web Development</h2>
+      </div>
+      <div class="links">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
+    </nav>
+    <nav class="header-mobile">
+      <div class="title-mobile">
+        <h2><a href="https://wmiguel.io/">William Miguel</a></h2>
+        <button class="about-button" onclick="myFunction()">&times;</button>
+      </div>
+      <div id="links-mobile" class="links-mobile">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
     </nav>
 
-    <div id="container">
-      <!-- 69 Love Songs -->
-      <a href="https://wmiguel.io/projects/69-love-songs" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>69 Love Songs</h2>
-        </div>
-      </a>
-      <!-- Arcana Books -->
-      <a href="https://wmiguel.io/projects/arcana-books" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Arcana Books</h2>
-        </div>
-      </a>
-      <!-- Blank Check Timeline -->
-      <a href="https://wmiguel.io/projects/blank-check" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Blank Check Timeline</h2>
-        </div>
-      </a>
-      <!-- Cinemind Magazine -->
-      <a href="https://wmiguel.io/projects/cinemind-magazine" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Cinemind Magazine</h2>
-        </div>
-      </a>
-      <!-- Criterion Channel -->
-      <a href="https://wmiguel.io/projects/criterion-channel" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Criterion Channel</h2>
-        </div>
-      </a>
-      <!-- The Grid Album Project -->
-      <a href="https://wmiguel.io/projects/grid-project" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>The Grid Album Project</h2>
-        </div>
-      </a>
-      <!-- Marvel Annual Report -->
-      <a href="https://wmiguel.io/projects/marvel-annual-report" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Marvel Annual Report</h2>
-        </div>
-      </a>
-      <!-- Movie Planner -->
-      <a href="https://wmiguel.io/projects/movie-planner" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Movie Planner</h2>
-        </div>
-      </a>
-      <!-- Roger Ebert Reviews -->
-      <a href="https://wmiguel.io/projects/roger-ebert" class="">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Roger Ebert Reviews</h2>
-        </div>
-      </a>
+    <!-- Main -->
+    <div id="wm-content">
+      <section id="wm-text">
+        <h1>📂 Projects</h1>
+        <h2>I'm William, a graphic designer and web developer (in training). Website is still a work in progress.</h2>
+      </section>
 
-    </div>
+      <section id="wm-directory">
+        <!-- 69 Love Songs -->
+        <a href="https://wmiguel.io/projects/69-love-songs" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>69 Love Songs</p>
+          </div>
+        </a>
+        <!-- Arcana Books -->
+        <a href="https://wmiguel.io/projects/arcana-books" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Arcana Books</p>
+          </div>
+        </a>
+        <!-- Blank Check Timeline -->
+        <a href="https://wmiguel.io/projects/blank-check" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Blank Check Timeline</p>
+          </div>
+        </a>
+        <!-- Cinemind Magazine -->
+        <a href="https://wmiguel.io/projects/cinemind-magazine" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Cinemind Magazine</p>
+          </div>
+        </a>
+        <!-- Criterion Channel -->
+        <a href="https://wmiguel.io/projects/criterion-channel" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Criterion Channel</p>
+          </div>
+        </a>
+        <!-- The Grid Album Project -->
+        <a href="https://wmiguel.io/projects/grid-project">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>The Grid Album Project</p>
+          </div>
+        </a>
+        <!-- Marvel Annual Report -->
+        <a href="https://wmiguel.io/projects/marvel-annual-report" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Marvel Annual Report</p>
+          </div>
+        </a>
+        <!-- Movie Planner -->
+        <a href="https://wmiguel.io/projects/movie-planner" class="in-progress">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Movie Planner</p>
+          </div>
+        </a>
+        <!-- Roger Ebert Reviews -->
+        <a href="https://wmiguel.io/projects/roger-ebert">
+          <div id="wm-project">
+            <p>📂</p>
+            <p>Roger Ebert Reviews</p>
+          </div>
+        </a>
 
-    <!-- <script src="js/main.js"></script> -->
+      </div>
+    </section>
 
+    <!-- Scripts -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("links-mobile");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
   </body>
 
 </html>
