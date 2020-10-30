@@ -18,7 +18,8 @@ function elementClicked(i) {
   lyricsArtist.textContent = `Track ${track} | ${artist} | ${album} (${year})`;
 
   var trackCover = document.getElementById("trackCover");
-  trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
+  // trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
+  trackCover.src = "https://wmiguel.io/" + cover;
 
   var lyricsText = document.getElementById("track-fullLyrics");
   lyricsText.innerHTML = lyrics;
@@ -51,7 +52,8 @@ function elementClicked(i) {
         lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
 
         var trackCover = document.getElementById("trackCover");
-        trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
+        // trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
+        trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover;
 
         var lyricsText = document.getElementById("track-fullLyrics");
         lyricsText.innerHTML = loveSongs[i].Lyrics;
@@ -83,7 +85,8 @@ function elementClicked(i) {
         lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
 
         var trackCover = document.getElementById("trackCover");
-        trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
+        // trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
+        trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover;
 
         var lyricsText = document.getElementById("track-fullLyrics");
         lyricsText.innerHTML = loveSongs[i].Lyrics;
@@ -139,8 +142,8 @@ function logKey(e) {
 $(document).ready(function(){
   var albumCover = loveSongs[0].AlbumCover;
   var imgAlbumLink = document.getElementById("album-link");
-  // imgAlbumLink.src = "https://wmiguel.io/" + albumCover;
-  imgAlbumLink.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + albumCover;
+  imgAlbumLink.src = "https://wmiguel.io/" + albumCover;
+  // imgAlbumLink.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + albumCover;
   for (var songs = 1; songs < loveSongs.length; songs++) {
     var trackNumber = loveSongs[songs].TrackNumber;
     var trackTitle = loveSongs[songs].Title;
