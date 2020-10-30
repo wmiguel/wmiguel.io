@@ -1,60 +1,127 @@
-#container {
-  display: grid;
-  grid-template-columns: repeat(3, 250px);
-  grid-auto-rows: minmax(95px, auto);
-  grid-gap: 25px;
-
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-
-  text-align: center;
-  margin: auto;
-  padding: 50px 0;
-}
-
-#container > * {
-  background-color: #efefef;
-}
-
-#container > *:hover {
-  background-color: #d1d1d1;
-}
-
-#project {
-  padding: 15px 15px;
-  margin: auto;
-}
-
-#project img {
+#shell {
+  margin: 0 auto;
   width: 55%;
-  /* background: #ef785a; */
+  max-width: 1080px;
 }
 
-.inprogress {
+#album-content, #lyrics-content {
+  padding: calc(75px + 5vh) 0;
+}
+
+#album-content {
+  display: block;
+  /* background-color: crimson; */
+}
+
+#lyrics-content {
+  display: none;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-gap: 15px;
+  /* background-color: tomato; */
+  text-align: center;
+}
+
+#album-content > section, , #lyrics-content > section {
+  text-align: left;
+}
+
+#albumInfo, #trackInfo {
+  margin-bottom: 2rem;
+}
+
+#album-trackList, #track-lyrics {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 25px;
+}
+
+#album-trackList > a:hover, #track-lyrics > a:hover {
+  background-color: #4cb9e2;
+}
+
+#album-cover img, #track-illustration img {
+  width: 100%;
+}
+
+#album-tracks, #track-fullLyrics {
+  height: 552px;
+  overflow: scroll;
+}
+
+#album-track {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-gap: 5px;
+
+  cursor: pointer;
+}
+
+#track-fullLyrics {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  text-align: left;
+  margin-block-end: 0rem;
+  color: white;
+}
+
+#album-track p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  text-align: left;
+  margin-block-end: 0rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#trackTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#album-track:hover {
+  opacity: .5;
+}
+
+.in-progress {
   opacity: 50%;
   pointer-events: none;
   cursor: default;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  color: #444444;
+  color: #efefef;
+}
+
+h1, h2, p {
+  margin-block-start: 0rem;
+  margin-block-end: 1.25rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: normal;
 }
 
 h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  font-size: 1rem;
-
-  color: #666666;
+  font-size: 1.15rem;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
   font-weight: 400;
-  color: #666666;
+  color: #efefef;
 }
 
 a {
@@ -67,42 +134,67 @@ a:hover {
   text-decoration: none;
 }
 
+#previous, #next {
+  display: grid;
+  place-items: center;
+}
+
+#lyrics-content button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,1);
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+
+#lyrics-content button:hover {
+  background-color: rgba(0,0,0,.5);
+  cursor: pointer;
+}
+
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 1080px) {
+  #album-content, #lyrics-content { width: 65%; }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.5rem; }
+  p  { font-size: 1.15rem; }
+  .header { display: flex; }
+  .header-mobile { display: none; }
+}
+
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 768px) {
-  #introduction {
-    background-color: rgba(250,250,250);
-    width: 67%;
-    padding: 25px 40px;
-    text-align: center;
-    margin: auto;
-    position: absolute;
+  #album-content, #lyrics-content {
+    margin: calc(75px + 5vh) auto;
+    width: 80%;
   }
-
-  h1 {
-    font-size: 1.5em;
+  #album-trackList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
   }
-
-  h2 {
-    font-size: 1.25em;
-  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.25rem; }
+  p  { font-size: 1rem; }
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
 }
 
 /* For screens that are 425px wide or less */
-@media screen and (max-width: 425px) {
-  #introduction {
-    background-color: rgba(250,250,250);
-    width: 58%;
-    padding: 25px 35px;
-    text-align: center;
-    margin: auto;
-    position: absolute;
+@media screen and (max-width: 450px) {
+  #album-content, #lyrics-content {
+    margin: calc(75px + 5vh) auto;
+    width: 85%;
   }
-
-  h1 {
-    font-size: 1.5em;
+  #album-trackList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
   }
-
-  h2 {
-    font-size: 1.25em;
-  }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  p  { font-size: 1rem; }
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
 }

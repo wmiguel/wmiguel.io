@@ -4,7 +4,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
 
     <title>William Miguel | 69 Love Songs</title>
-    <link rel="shortcut icon" type="image/png" href="images/wm-favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/wm-favicon.png"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
@@ -15,78 +15,87 @@
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" href="../css/projects/69-love-songs/main.css">
   </head>
-
   <body>
 
-    <!-- Main Elements Here -->
+    <!-- Navbars -->
     <nav class="header">
-      <h2><a href="https://wmiguel.io/">William Miguel</a> | <a href="https://wmiguel.io/projects">Projects</a> | 69 Love Songs</h2>
-      <button class="about-button">i</button>
+      <div class="title">
+        <h2><a href="https://wmiguel.io/">William Miguel</a> | Graphic Design & Web Development</h2>
+      </div>
+      <div class="links">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
+    </nav>
+    <nav class="header-mobile">
+      <div class="title-mobile">
+        <h2><a href="https://wmiguel.io/">William Miguel</a></h2>
+        <button class="about-button" onclick="myFunction()">&times;</button>
+      </div>
+      <div id="links-mobile" class="links-mobile">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
     </nav>
 
-    <div id="container">
-
-      <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=743019552/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://themagneticfields.bandcamp.com/album/69-love-songs">69 Love Songs by The Magnetic Fields</a></iframe>
-
-      <a href="https://wmiguel.io/projects/directors" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Blank Check Directors</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/cinemind-magazine" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Cinemind Magazine</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/criterion-channel" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Criterion Channel (Redesign)</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/grid-project">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>The Grid Album Project</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/marvel-annual-report" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Marvel Annual Report</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/movie-planner" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Movie Planner</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/roger-ebert">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>Roger Ebert Reviews</h2>
-        </div>
-      </a>
-
-      <a href="https://wmiguel.io/projects/69-love-songs" class="inprogress">
-        <div id="project">
-          <img src="https://cdn.audionamix.com//services-icon-01.png">
-          <h2>69 Love Songs</h2>
-        </div>
-      </a>
-
+    <!-- Main Tracklist -->
+    <div id="album-content">
+      <div id="shell">
+        <section id="albumInfo">
+          <h1 id="albumTitle">69 Love Songs</h1>
+          <h2 id="albumArtist">The Magnetic Fields <span id="albumYear">1999</span></h2>
+        </section>
+        <section id="album-trackList">
+          <div id="album-cover">
+            <img id="album-link" src="">
+          </div>
+          <div id="album-tracks"></div>
+        </section>
+      </div>
     </div>
 
-    <!-- <script src="js/main.js"></script> -->
+    <!-- Lyrics Section -->
+    <div id="lyrics-content">
+      <div id="previous">
+        <button onclick="previousTrack();">&#10094;</button>
+      </div>
+      <div id="shell">
+        <section id="trackInfo">
+          <h1 id="trackTitle"></h1>
+          <h2 id="trackArtist"></h2>
+        </section>
+        <section id="track-lyrics">
+          <div id="track-illustration">
+            <img id="trackCover" src="">
+          </div>
+          <div id="track-fullLyrics"></div>
+        </section>
+      </div>
+      <div id="next">
+        <button onclick="nextTrack();">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("links-mobile");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <!-- Handlebars & jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="../js/projects/69-love-songs/love-songs.js"></script>
+    <script src="../js/projects/69-love-songs/main.js"></script>
 
   </body>
 
