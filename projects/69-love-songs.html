@@ -51,7 +51,15 @@
           <div id="album-cover">
             <img id="album-link" src="">
           </div>
-          <div id="album-tracks"></div>
+          <div id="album-volumes">
+            <div id="volumes">
+              <h1 id="vol-01" onclick="volume(1);" class="active">1</h1>
+              <h1 id="vol-02" onclick="volume(2);">2</h1>
+              <h1 id="vol-03" onclick="volume(3);">3</h1>
+            </div>
+            <div id="album-tracks">
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -63,8 +71,8 @@
       </div>
       <div id="shell">
         <section id="trackInfo">
-          <h1 id="trackTitle"></h1>
           <h2 id="trackArtist"></h2>
+          <h1 id="trackTitle"></h1>
         </section>
         <section id="track-lyrics">
           <div id="track-illustration">

@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 #shell {
   margin: 0 auto;
   width: 55%;
@@ -35,6 +39,26 @@
   grid-gap: 25px;
 }
 
+#volumes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+#volumes h1 {
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto 25px;
+}
+
+#volumes h1:hover {
+  border-bottom: 5px solid grey;
+}
+
+.active {
+  border-bottom: 5px solid white;
+}
+
 #album-trackList > a:hover, #track-lyrics > a:hover {
   background-color: #4cb9e2;
 }
@@ -43,7 +67,7 @@
   width: 100%;
 }
 
-#album-tracks, #track-fullLyrics {
+#album-volumes, #track-fullLyrics {
   height: 552px;
   overflow: scroll;
 }
