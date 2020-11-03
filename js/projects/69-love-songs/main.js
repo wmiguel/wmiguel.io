@@ -13,7 +13,7 @@ var previous = document.getElementById("previous");
 var next = document.getElementById("next");
 
 var albumCover = loveSongs[0].AlbumCover;
-imgAlbumLink.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + albumCover; // "https://wmiguel.io/" + albumCover;
+imgAlbumLink.src = "https://wmiguel.io/" + albumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + albumCover;
 
 for (var songs = 1; songs <= 23; songs++) {
   var trackNumber = loveSongs[songs].TrackNumber;
@@ -95,12 +95,12 @@ function trackSelected(i) {
 
   lyricsTitle.textContent = title;
   lyricsArtist.textContent = `Track ${track} | ${artist} | ${album} (${year})`;
-  trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + cover; // "https://wmiguel.io/" + cover;
+  trackCover.src = "https://wmiguel.io/" + cover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
   lyricsText.innerHTML = lyrics;
   lyricsActivate.style.display = 'grid';
   albumDeactivate.style.display = 'none';
-  previous.innerHTML = "<button onclick='previousTrack(" + track + ");'>&#10094;</button>";
-  next.innerHTML = "<button onclick='nextTrack(" + track + ");'>&#10095;</button>";
+  previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
+  next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
 
   document.onkeydown = function(event) {
     var e = event || window.event;
@@ -111,33 +111,21 @@ function trackSelected(i) {
     var next = document.getElementById("next");
     var previous = document.getElementById("previous");
 
-    if (e.keyCode == '37') { // Left Key
-      if (i == 1) {
-        return;
-      }
-      else {
-        nextNum = i -= 1;
-        lyricsTitle.textContent = loveSongs[i].Title;
-        lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
-        trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover; // "https://wmiguel.io/" + loveSongs[i].AlbumCover;
-        lyricsText.innerHTML = loveSongs[i].Lyrics;
-        next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
-        next.style.opacity = 1;
-        previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
-        if (i == 1) {
-          previous.style.opacity = .5;
-        }
-      }
-    }
     if (e.keyCode == '39') { //RIGHT
       if (i == 23) {
+        return;
+      }
+      if (i == 46) {
+        return;
+      }
+      if (i == 69) {
         return;
       }
       else {
         nextNum = i += 1;
         lyricsTitle.textContent = loveSongs[i].Title;
         lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
-        trackCover.src = "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover; // "https://wmiguel.io/" + loveSongs[i].AlbumCover;
+        trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
         lyricsText.innerHTML = loveSongs[i].Lyrics;
         next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
         previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
@@ -145,12 +133,54 @@ function trackSelected(i) {
         if (i == 23) {
           next.style.opacity = .5;
         }
+        if (i == 47) {
+          next.style.opacity = .5;
+        }
+        if (i == 69) {
+          next.style.opacity = .5;
+        }
+      }
+    }
+    if (e.keyCode == '37') { // Left Key
+      if (i == 1) {
+        return;
+      }
+      if (i == 24) {
+        return;
+      }
+      if (i == 47) {
+        return;
+      }
+      else {
+        nextNum = i -= 1;
+        lyricsTitle.textContent = loveSongs[i].Title;
+        lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
+        trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
+        lyricsText.innerHTML = loveSongs[i].Lyrics;
+        next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
+        next.style.opacity = 1;
+        previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
+        if (i == 1) {
+          previous.style.opacity = .5;
+        }
+        if (i == 24) {
+          previous.style.opacity = .5;
+        }
+        if (i == 47) {
+          previous.style.opacity = .5;
+        }
       }
     }
   }
 }
 function nextTrack(num) {
-  if (num == 23 || num == 46 || num == 69 ) {
+  if (num == 23) {
+    return;
+  }
+  if (num == 46) {
+    return;
+  }
+  if (num == 69) {
     return;
   }
   else {
@@ -160,10 +190,22 @@ function nextTrack(num) {
     if (num == 23) {
       next.style.opacity = .5;
     }
+    if (num == 46) {
+      next.style.opacity = .5;
+    }
+    if (num == 69) {
+      next.style.opacity = .5;
+    }
   }
 };
 function previousTrack(num) {
-  if (num == 1 || num == 24 || num == 47) {
+  if (num == 1) {
+    return;
+  }
+  if (num == 24) {
+    return;
+  }
+  if (num == 47) {
     return;
   }
   else {
@@ -173,7 +215,19 @@ function previousTrack(num) {
     if (num == 1) {
       previous.style.opacity = .5;
     }
+    if (num == 24) {
+      previous.style.opacity = .5;
+    }
+    if (num == 47) {
+      previous.style.opacity = .5;
+    }
   }
+};
+function goHome() {
+  var lyricsActivate = document.getElementById('lyrics-content');
+  var albumDeactivate = document.getElementById('album-content');
+  lyricsActivate.style.display = 'none';
+  albumDeactivate.style.display = 'block';
 };
 function escapeTrack(esc) {
   if (esc.code == 'Escape') {

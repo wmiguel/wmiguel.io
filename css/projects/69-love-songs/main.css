@@ -2,35 +2,30 @@ body {
   background-color: black;
 }
 
+#album-content, #lyrics-content {
+  padding-top: 100px;
+}
+
 #shell {
   margin: 0 auto;
-  width: 55%;
+  width: 80%;
   max-width: 1080px;
-}
-
-#album-content, #lyrics-content {
-  padding: calc(75px + 5vh) 0;
-}
-
-#album-content {
-  display: block;
-  /* background-color: crimson; */
 }
 
 #lyrics-content {
   display: none;
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 15px;
-  /* background-color: tomato; */
   text-align: center;
 }
 
-#album-content > section, , #lyrics-content > section {
-  text-align: left;
+#home {
+  display: none;
 }
 
 #albumInfo, #trackInfo {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 #album-trackList, #track-lyrics {
@@ -52,19 +47,24 @@ body {
 }
 
 #volumes h1:hover {
-  border-bottom: 5px solid grey;
+  border-bottom: 4px solid white;
 }
 
 .active {
-  border-bottom: 5px solid white;
+  border-bottom: 4px solid white;
 }
 
 #album-trackList > a:hover, #track-lyrics > a:hover {
   background-color: #4cb9e2;
 }
 
+#album-cover {
+  display: grid;
+  place-items: center;
+}
+
 #album-cover img, #track-illustration img {
-  width: 100%;
+  width: 75%;
 }
 
 #album-volumes, #track-fullLyrics {
@@ -179,7 +179,9 @@ a:hover {
 
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 1080px) {
-  #album-content, #lyrics-content { width: 65%; }
+  /* #album-content, #lyrics-content {
+    width: 65%;
+  } */
   h1 { font-size: 2.5rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 1.15rem; }
@@ -190,19 +192,64 @@ a:hover {
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 768px) {
   #album-content, #lyrics-content {
-    margin: calc(75px + 5vh) auto;
-    width: 80%;
+    padding: 75px 0;
+    width: 100%;
   }
-  #album-trackList {
+  #lyrics-content {
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-gap: 15px;
+    text-align: center;
+    grid-template-areas:
+            "prev home next"
+            "song song song";
+  }
+  #shell {
+    margin: 0 auto;
+    width: 450px;
+  }
+  #previous {
+    grid-area: prev;
+  }
+  #next {
+    grid-area: next;
+  }
+  #home {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 25px;
+    grid-area: home;
+    margin: auto;
   }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.25rem; }
-  p  { font-size: 1rem; }
-  .header { display: none!important; }
-  .header-mobile { display: block!important; }
+  #lyrics-content > #shell {
+    grid-area: song;
+  }
+  #album-volumes, #track-fullLyrics {
+    height: 100%;
+  }
+  #album-trackList, #track-lyrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 35px;
+  }
+  #track-fullLyrics {
+    text-align: center;
+  }
+  #album-cover img, #track-illustration img {
+    width: 35%;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  p  {
+    font-size: 1rem;
+  }
+  .header {
+    display: none!important;
+  }
+  .header-mobile {
+    display: block!important;
+  }
 }
 
 /* For screens that are 425px wide or less */
