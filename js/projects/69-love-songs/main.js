@@ -99,13 +99,18 @@ function trackSelected(i) {
   lyricsArtist.textContent = `Track ${track} | ${artist} | ${album} (${year})`;
   trackCover.src = "https://wmiguel.io/" + cover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
   lyricsText.innerHTML = lyrics;
-  lyricsActivate.style.display = 'block';
-  albumDeactivate.style.display = 'none';
+  lyricsActivate.style.visibility = 'visible';
+  lyricsActivate.style.opacity = '1';
+  lyricsActivate.style.height = '100%';
+  lyricsActivate.style.paddingTop = '100px';
+  albumDeactivate.style.visibility = 'hidden';
+  albumDeactivate.style.opacity = '0';
+  albumDeactivate.style.height = '0';
+  albumDeactivate.style.paddingTop = '0';
   previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
   previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
   next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
   nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
-
 
   document.onkeydown = function(event) {
     var e = event || window.event;
@@ -118,7 +123,7 @@ function trackSelected(i) {
     var next = document.getElementById("next");
     var nextMobile = document.getElementById("next-mobile");
 
-    if (e.keyCode == '39') { //RIGHT
+    if (e.keyCode == '39') { // Right Key
       if (i == 23) {
         return;
       }
@@ -192,6 +197,7 @@ function trackSelected(i) {
   }
 }
 function nextTrack(num) {
+  console.log("next");
   if (num == 23) {
     return;
   }
@@ -221,6 +227,7 @@ function nextTrack(num) {
   }
 };
 function previousTrack(num) {
+  console.log("previous");
   if (num == 1) {
     return;
   }
@@ -250,14 +257,26 @@ function previousTrack(num) {
   }
 };
 function goHome() {
-  lyricsActivate.style.display = 'none';
-  albumDeactivate.style.display = 'block';
+  lyricsActivate.style.visibility = 'hidden';
+  lyricsActivate.style.opacity = '0';
+  lyricsActivate.style.height = '0';
+  lyricsActivate.style.paddingTop = '0';
+  albumDeactivate.style.visibility = 'visible';
+  albumDeactivate.style.opacity = '1';
+  albumDeactivate.style.height = '100%';
+  albumDeactivate.style.paddingTop = '100px';
 };
 function escapeTrack(esc) {
   if (esc.code == 'Escape') {
     var lyricsActivate = document.getElementById('lyrics-content');
     var albumDeactivate = document.getElementById('album-content');
-    lyricsActivate.style.display = 'none';
-    albumDeactivate.style.display = 'block';
+    lyricsActivate.style.visibility = 'hidden';
+    lyricsActivate.style.opacity = '0';
+    lyricsActivate.style.height = '0';
+    lyricsActivate.style.paddingTop = '0';
+    albumDeactivate.style.visibility = 'visible';
+    albumDeactivate.style.opacity = '1';
+    albumDeactivate.style.height = '100%';
+    albumDeactivate.style.paddingTop = '100px';
   }
 }
