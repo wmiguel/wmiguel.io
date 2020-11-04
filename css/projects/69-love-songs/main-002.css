@@ -12,18 +12,44 @@ body {
   max-width: 1080px;
 }
 
+#lyrics-content > #shell {
+  grid-area: song;
+}
+
 #lyrics-content {
   display: none;
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 15px;
   text-align: center;
   grid-template-areas:
-          "prev home next"
-          "song song song";
+    "prev home next"
+    "prev song next"
+    "prev mobl next";
 }
 
 #home {
   display: none;
+  grid-area: home;
+  margin: auto;
+}
+#home img {
+  width: 35px;
+}
+#mobile-home {
+  margin: auto;
+}
+#mobile-home img {
+  width: 35px;
+}
+#previous {
+  display: grid;
+  place-items: center;
+  grid-area: prev;
+}
+#next {
+  display: grid;
+  place-items: center;
+  grid-area: next;
 }
 
 #albumInfo, #trackInfo {
@@ -161,13 +187,7 @@ a:hover {
   text-decoration: none;
 }
 
-#previous, #next {
-  display: grid;
-  place-items: center;
-}
 
-#previous { grid-area: prev; }
-#next { grid-area: next; }
 
 #lyrics-content button {
   width: 50px;
@@ -182,9 +202,11 @@ a:hover {
   background-color: rgba(192,192,192,0.3);
 }
 
-#mobile-next-previous-home {
+#mobile-buttons {
   display: none;
-  position: fixed;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  /* position: fixed; */
   grid-area: mobl;
 }
 
@@ -202,11 +224,15 @@ a:hover {
     width: 100%;
   }
   #lyrics-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    text-align: center;
     grid-template-areas:
       "song song song"
-      "prev home next";
+      "prev home next"
+      "mobl mobl mobl";
   }
-  #mobile-next-previous-home {
+  #mobile-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
@@ -227,13 +253,10 @@ a:hover {
   }
   #home {
     display: grid;
-    grid-area: home;
-    margin: auto;
   }
-  #home img {
-    width: 35px;
+  #mobile-home {
+    display: grid;
   }
-  #lyrics-content > #shell { grid-area: song; }
   #album-volumes, #track-fullLyrics { height: 100%; }
   #album-trackList, #track-lyrics {
     display: grid;
