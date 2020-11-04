@@ -1,5 +1,5 @@
 body {
-  background-color: crimson;
+  background-color: black;
 }
 
 #album-content, #lyrics-content {
@@ -11,9 +11,11 @@ body {
   width: 80%;
   max-width: 1080px;
 }
-
 #lyrics-content {
   display: none;
+}
+#main-content {
+  display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 15px;
   text-align: center;
@@ -22,10 +24,28 @@ body {
           "song song song";
 }
 
+#mobile-slider {
+  background-color: black;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#previous-mobile, #next-mobile {
+  display: grid;
+  place-items: center;
+}
+
 #home {
   display: none;
 }
-
+#home-mobile {
+  margin: auto;
+}
 #albumInfo, #trackInfo {
   margin-bottom: 2rem;
   text-align: center;
@@ -169,7 +189,7 @@ a:hover {
 #previous { grid-area: prev; }
 #next { grid-area: next; }
 
-#lyrics-content button {
+#main-content button, #mobile-slider button {
   width: 50px;
   height: 50px;
   background-color: rgba(0,0,0,1);
@@ -178,14 +198,8 @@ a:hover {
   font-size: 28px;
   cursor: pointer;
 }
-#lyrics-content button:hover {
+#main-content button:hover, #mobile-slider button:hover {
   background-color: rgba(192,192,192,0.3);
-}
-
-#mobile-next-previous-home {
-  display: none;
-  position: fixed;
-  grid-area: mobl;
 }
 
 /* For screens that are 768px wide or less */
@@ -201,39 +215,34 @@ a:hover {
     padding: 75px 0;
     width: 100%;
   }
-  #lyrics-content {
+  #main-content {
     grid-template-areas:
       "song song song"
       "prev home next";
   }
-  #mobile-next-previous-home {
+  #previous, #next, #home {
+    display: none;
+  }
+  #mobile-slider {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
-    position: fixed;
-    bottom: 0;
   }
   #shell {
     margin: 0 auto 50px;
     width: 450px;
   }
-  #lyrics-content button {
+  #main-content button, #mobile-slider button {
     width: 100%;
     height: 100%;
     cursor: pointer;
   }
-  #lyrics-content button:hover {
+  #main-content button:hover, #mobile-slider button:hover {
     background-color: rgba(192,192,192,0.3);
   }
-  #home {
-    display: grid;
-    grid-area: home;
-    margin: auto;
-  }
-  #home img {
+
+  #home img, #home-mobile img {
     width: 35px;
   }
-  #lyrics-content > #shell { grid-area: song; }
+  #main-content > #shell { grid-area: song; }
   #album-volumes, #track-fullLyrics { height: 100%; }
   #album-trackList, #track-lyrics {
     display: grid;

@@ -65,26 +65,39 @@
 
     <!-- Lyrics Section -->
     <div id="lyrics-content">
-      <div id="previous">
-        <button onclick="previousTrack();">&#10094;</button>
+      <div id="main-content">
+        <div id="previous">
+          <button onclick="previousTrack();">&#10094;</button>
+        </div>
+        <div id="home">
+          <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
+        </div>
+        <div id="next">
+          <button onclick="nextTrack();">&#10095;</button>
+        </div>
+        <div id="shell">
+          <section id="trackInfo">
+            <h2 id="trackArtist"></h2>
+            <h1 id="trackTitle"></h1>
+          </section>
+          <section id="track-lyrics">
+            <div id="track-illustration">
+              <img id="trackCover" src="">
+            </div>
+            <div id="track-fullLyrics"></div>
+          </section>
+        </div>
       </div>
-      <div id="home">
-        <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
-      </div>
-      <div id="next">
-        <button onclick="nextTrack();">&#10095;</button>
-      </div>
-      <div id="shell">
-        <section id="trackInfo">
-          <h2 id="trackArtist"></h2>
-          <h1 id="trackTitle"></h1>
-        </section>
-        <section id="track-lyrics">
-          <div id="track-illustration">
-            <img id="trackCover" src="">
-          </div>
-          <div id="track-fullLyrics"></div>
-        </section>
+      <div id="mobile-slider">
+        <div id="previous-mobile">
+          <button onclick="previousTrack();">&#10094;</button>
+        </div>
+        <div id="home-mobile">
+          <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
+        </div>
+        <div id="next-mobile">
+          <button onclick="nextTrack();">&#10095;</button>
+        </div>
       </div>
     </div>
 

@@ -11,6 +11,8 @@ var lyricsActivate = document.getElementById('lyrics-content');
 var albumDeactivate = document.getElementById('album-content');
 var previous = document.getElementById("previous");
 var next = document.getElementById("next");
+var previousMobile = document.getElementById("previous-mobile");
+var nextMobile = document.getElementById("next-mobile");
 
 var albumCover = loveSongs[0].AlbumCover;
 imgAlbumLink.src = "https://wmiguel.io/" + albumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + albumCover;
@@ -97,10 +99,13 @@ function trackSelected(i) {
   lyricsArtist.textContent = `Track ${track} | ${artist} | ${album} (${year})`;
   trackCover.src = "https://wmiguel.io/" + cover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
   lyricsText.innerHTML = lyrics;
-  lyricsActivate.style.display = 'grid';
+  lyricsActivate.style.display = 'block';
   albumDeactivate.style.display = 'none';
   previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
+  previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
   next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
+  nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
+
 
   document.onkeydown = function(event) {
     var e = event || window.event;
@@ -108,8 +113,10 @@ function trackSelected(i) {
     var lyricsArtist = document.getElementById("trackArtist");
     var trackCover = document.getElementById("trackCover");
     var lyricsText = document.getElementById("track-fullLyrics");
-    var next = document.getElementById("next");
     var previous = document.getElementById("previous");
+    var previousMobile = document.getElementById("previous-mobile");
+    var next = document.getElementById("next");
+    var nextMobile = document.getElementById("next-mobile");
 
     if (e.keyCode == '39') { //RIGHT
       if (i == 23) {
@@ -128,16 +135,21 @@ function trackSelected(i) {
         trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
         lyricsText.innerHTML = loveSongs[i].Lyrics;
         next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
+        nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
         previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
+        previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
         previous.style.opacity = 1;
         if (i == 23) {
           next.style.opacity = .5;
+          nextMobile.style.opacity = .5;
         }
         if (i == 47) {
           next.style.opacity = .5;
+          nextMobile.style.opacity = .5;
         }
         if (i == 69) {
           next.style.opacity = .5;
+          nextMobile.style.opacity = .5;
         }
       }
     }
@@ -158,16 +170,22 @@ function trackSelected(i) {
         trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
         lyricsText.innerHTML = loveSongs[i].Lyrics;
         next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
+        nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
         next.style.opacity = 1;
+        nextMobile.style.opacity = 1;
         previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
+        previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
         if (i == 1) {
           previous.style.opacity = .5;
+          previousMobile.style.opacity = .5;
         }
         if (i == 24) {
           previous.style.opacity = .5;
+          previousMobile.style.opacity = .5;
         }
         if (i == 47) {
           previous.style.opacity = .5;
+          previousMobile.style.opacity = .5;
         }
       }
     }
@@ -187,14 +205,18 @@ function nextTrack(num) {
     var newNum = num += 1;
     trackSelected(newNum);
     previous.style.opacity = 1;
+    previousMobile.style.opacity = 1;
     if (num == 23) {
       next.style.opacity = .5;
+      nextMobile.style.opacity = .5;
     }
     if (num == 46) {
       next.style.opacity = .5;
+      nextMobile.style.opacity = .5;
     }
     if (num == 69) {
       next.style.opacity = .5;
+      nextMobile.style.opacity = .5;
     }
   }
 };
@@ -212,20 +234,22 @@ function previousTrack(num) {
     var newNum = num -= 1;
     trackSelected(newNum);
     next.style.opacity = 1;
+    nextMobile.style.opacity = 1;
     if (num == 1) {
       previous.style.opacity = .5;
+      previousMobile.style.opacity = .5;
     }
     if (num == 24) {
       previous.style.opacity = .5;
+      previousMobile.style.opacity = .5;
     }
     if (num == 47) {
       previous.style.opacity = .5;
+      previousMobile.style.opacity = .5;
     }
   }
 };
 function goHome() {
-  var lyricsActivate = document.getElementById('lyrics-content');
-  var albumDeactivate = document.getElementById('album-content');
   lyricsActivate.style.display = 'none';
   albumDeactivate.style.display = 'block';
 };
