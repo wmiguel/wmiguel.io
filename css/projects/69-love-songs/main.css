@@ -17,6 +17,9 @@ body {
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 15px;
   text-align: center;
+  grid-template-areas:
+          "prev home next"
+          "song song song";
 }
 
 #home {
@@ -182,16 +185,13 @@ a:hover {
 
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 1080px) {
-  /* #album-content, #lyrics-content {
-    width: 65%;
-  } */
-  h1 { font-size: 2.5rem; }
+  h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 1.15rem; }
 }
 
 /* For screens that are 768px wide or less */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
   #album-content, #lyrics-content {
     padding: 75px 0;
     width: 100%;
