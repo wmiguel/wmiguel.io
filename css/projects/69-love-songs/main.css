@@ -163,6 +163,9 @@ a:hover {
   place-items: center;
 }
 
+#previous { grid-area: prev; }
+#next { grid-area: next; }
+
 #lyrics-content button {
   width: 50px;
   height: 50px;
@@ -185,8 +188,6 @@ a:hover {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 1.15rem; }
-  .header { display: flex; }
-  .header-mobile { display: none; }
 }
 
 /* For screens that are 768px wide or less */
@@ -207,65 +208,39 @@ a:hover {
     margin: 0 auto;
     width: 450px;
   }
-  #previous {
-    grid-area: prev;
-  }
-  #next {
-    grid-area: next;
-  }
   #home {
     display: grid;
     grid-area: home;
     margin: auto;
   }
-  #lyrics-content > #shell {
-    grid-area: song;
+  #home img {
+    width: 35px;
   }
-  #album-volumes, #track-fullLyrics {
-    height: 100%;
-  }
+  #lyrics-content > #shell { grid-area: song; }
+  #album-volumes, #track-fullLyrics { height: 100%; }
   #album-trackList, #track-lyrics {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 35px;
   }
-  #track-fullLyrics {
-    text-align: center;
-  }
-  #album-cover img, #track-illustration img {
-    width: 35%;
-  }
-  h1 {
-    font-size: 1.75rem;
-  }
-  h2 {
-    font-size: 1.25rem;
-  }
-  p  {
-    font-size: 1rem;
-  }
-  .header {
-    display: none!important;
-  }
-  .header-mobile {
-    display: block!important;
-  }
+  #track-fullLyrics { text-align: center; }
+  #album-cover img, #track-illustration img { width: 35%; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  p { font-size: 1rem; }
 }
 
 /* For screens that are 425px wide or less */
 @media screen and (max-width: 450px) {
-  #album-content, #lyrics-content {
-    margin: calc(75px + 5vh) auto;
-    width: 85%;
+  #shell {
+    width: 80%;
   }
-  #album-trackList {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 25px;
+  #trackTitle {
+    overflow: inherit;
+    white-space: inherit;
+    text-overflow: inherit;
   }
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.25rem; }
+  h1 { font-size: 1.25rem; }
+  h2 { font-size: 1rem; }
   p  { font-size: 1rem; }
-  .header { display: none!important; }
-  .header-mobile { display: block!important; }
 }

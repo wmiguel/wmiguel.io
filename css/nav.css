@@ -116,3 +116,21 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 1080px) {
+  .header { display: flex; }
+  .header-mobile { display: none; }
+}
+
+/* For screens that are 768px wide or less */
+@media screen and (max-width: 768px) {
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
+}
+
+/* For screens that are 425px wide or less */
+@media screen and (max-width: 450px) {
+  .header { display: none!important; }
+  .header-mobile { display: block!important; }
+}
