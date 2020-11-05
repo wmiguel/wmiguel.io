@@ -108,15 +108,17 @@ function trackSelected(i) {
 
   trackCover.src = "https://wmiguel.io/" + cover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
   lyricsText.innerHTML = lyrics;
+
   lyricsActivate.style.visibility = 'visible';
   lyricsActivate.style.opacity = '1';
-  lyricsActivate.style.height = '100%';
-  lyricsActivate.style.paddingTop = '100px';
+  lyricsActivate.style.display = 'block';
+
   mainContent.style.display = 'grid';
+
   albumDeactivate.style.visibility = 'hidden';
   albumDeactivate.style.opacity = '0';
-  albumDeactivate.style.height = '0';
-  albumDeactivate.style.paddingTop = '0';
+  albumDeactivate.style.display = 'none';
+
   previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
   previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
   next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
@@ -278,13 +280,13 @@ function previousTrack(num) {
 function goHome() {
   lyricsActivate.style.visibility = 'hidden';
   lyricsActivate.style.opacity = '0';
-  lyricsActivate.style.height = '0';
-  lyricsActivate.style.paddingTop = '0';
+  lyricsActivate.style.display = 'none';
+
   mainContent.style.display = 'none';
+
   albumDeactivate.style.visibility = 'visible';
   albumDeactivate.style.opacity = '1';
-  albumDeactivate.style.height = '100%';
-  albumDeactivate.style.paddingTop = '100px';
+  albumDeactivate.style.display = 'block';
 };
 function escapeTrack(esc) {
   if (esc.code == 'Escape') {
@@ -293,12 +295,12 @@ function escapeTrack(esc) {
     var mainContent = document.getElementById('main-content');
     lyricsActivate.style.visibility = 'hidden';
     lyricsActivate.style.opacity = '0';
-    lyricsActivate.style.height = '0';
-    lyricsActivate.style.paddingTop = '0';
+    lyricsActivate.style.display = 'none';
+
     mainContent.style.display = 'none';
+
     albumDeactivate.style.visibility = 'visible';
     albumDeactivate.style.opacity = '1';
-    albumDeactivate.style.height = '100%';
-    albumDeactivate.style.paddingTop = '100px';
+    albumDeactivate.style.display = 'block';
   }
 }

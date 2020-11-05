@@ -3,19 +3,25 @@ body {
   color: #efefef;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   margin-block-start: 0rem;
-  margin-block-end: 1.25rem;
+  margin-block-end: 0.75rem;
 }
 
 h1 {
   font-size: 2rem;
+  line-height: 1.75;
 }
 
 h2 {
   font-size: 1.15rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-block-end: 0.5rem;
 }
 
 p {
@@ -26,21 +32,89 @@ p {
   margin-block-end: 1.25rem;
 }
 
-#album-content {
-  padding-top: 100px;
+#main-container, #album-trackList, #album-cover, #volumes, #album-track,
+#previous, #previous-mobile, #next, #next-mobile {
+  display: grid;
+}
+
+#main-container, #album-cover,
+#previous, #next, #previous-mobile, #next-mobile {
+  place-items: center;
+}
+
+#main-container {
+  background-color: darkslategray;
+  height: 100vh;
+}
+
+/* Album Section */
+
+#album-content, #lyrics-content {
   transition: opacity 1s ease-out;
 }
+#shell {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1080px;
+}
+#albumInfo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#album-trackList {
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 25px;
+}
+#album-trackList > a:hover, #track-lyrics > a:hover {
+  background-color: #4cb9e2;
+}
+#album-cover img {
+  width: 75%;
+}
+#album-volumes, #track-fullLyrics {
+  overflow: auto;
+}
+#volumes {
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+#volumes h1 {
+  cursor: pointer;
+  width: 50%;
+  height: 60%;
+  margin: 0 auto 25px;
+}
+#volumes h1:hover, .active {
+  border-bottom: 4px solid white;
+}
+#album-track {
+  grid-template-columns: 1fr 7fr;
+  grid-gap: 5px;
+  cursor: pointer;
+}
+#album-track p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  margin-block-end: 0rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#album-track:hover {
+  opacity: .5;
+}
+
+
+
+/* Lyrics Section */
 
 #lyrics-content {
+  display: none;
   visibility: hidden;
   opacity: 0;
-  height: 0;
-  transition: opacity 1s ease-out;
-}
-
-#track-information {
-  width: 75%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 #main-content {
@@ -51,93 +125,6 @@ p {
   grid-template-areas:
           "prev home next"
           "song song song";
-}
-
-#shell {
-  margin: 0 auto;
-  width: 80%;
-  max-width: 1080px;
-}
-
-#mobile-slider {
-  background-color: black;
-  display: none;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-}
-
-#album-cover, #previous, #next, #previous-mobile, #next-mobile  {
-  display: grid;
-  place-items: center;
-}
-
-#album-cover {
-  display: grid;
-  place-items: center;
-}
-
-#album-trackList {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 25px;
-}
-
-#track-lyrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 500px;
-  grid-gap: 25px;
-}
-
-#volumes {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-}
-
-#album-track {
-  display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-gap: 5px;
-  cursor: pointer;
-}
-
-#track-fullLyrics {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-
-  text-align: center;
-  padding: 25px;
-  /* background-color: tomato; */
-}
-
-/* width */
-#track-fullLyrics::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-/* #track-fullLyrics::-webkit-scrollbar-track {
-  background: #f1f1f1;
-} */
-
-/* Handle */
-#track-fullLyrics::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-#track-fullLyrics::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 #previous {
@@ -152,83 +139,62 @@ p {
   display: none;
 }
 
-#home-mobile {
-  margin: auto;
+#track-lyrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 35vh;
+  grid-gap: 25px;
 }
-
-#albumInfo {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-#volumes h1 {
-  cursor: pointer;
-  width: 50%;
-  height: 60%;
-  margin: 0 auto 25px;
-}
-
-#volumes h1:hover {
-  border-bottom: 4px solid white;
-}
-
-.active {
-  border-bottom: 4px solid white;
-}
-
 #album-trackList > a:hover, #track-lyrics > a:hover {
   background-color: #4cb9e2;
 }
-
-#album-cover img {
+#track-information {
   width: 75%;
+  margin: 0 auto;
 }
-
 #track-information img {
   width: 50%;
   margin-bottom: 35px;
 }
-
-#home-mobile img {
-  padding-top: 10px;
+#trackTitle {
+  font-size: 1.5rem;
 }
-
 #album-volumes, #track-fullLyrics {
   overflow: auto;
 }
 
-#trackTitle {
-  font-size: 1.5rem;
-}
-
-
-
-#album-track p {
+#track-fullLyrics {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 400;
 
-  text-align: left;
-  margin-block-end: 0rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  text-align: center;
+  background-color: snow;
+  color: black;
+  border: 50px solid snow;
 }
 
-/* #trackTitle {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-} */
-
-#album-track:hover {
-  opacity: .5;
+#track-fullLyrics::-webkit-scrollbar {
+  width: 5px;
 }
 
-.in-progress {
-  opacity: 50%;
-  pointer-events: none;
-  cursor: default;
+#track-fullLyrics::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+#track-fullLyrics::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#mobile-slider {
+  background-color: black;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
 
 #main-content button, #mobile-slider button {
@@ -245,95 +211,10 @@ p {
   background-color: rgba(192,192,192,0.3);
 }
 
-/* For screens that are 768px wide or less */
-@media all and (max-width: 1080px) {
-  #trackTitle {
-    font-size: 1.25rem;
-    margin-block-end: 0.5rem;
-  }
-  #trackNumberVolume, #trackArtist, #trackAlbum {
-    font-size: 1rem;
-    margin-block-end: 0.5rem;
-  }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  p  { font-size: 1.15rem; }
+#home-mobile {
+  margin: auto;
 }
 
-
-@media all and (max-width: 980px) {
-  #album-content, #lyrics-content {
-    /* padding-top: 75px; */
-    width: 100%;
-  }
-  #main-content {
-    grid-template-areas:
-      "song song song"
-      "prev home next";
-  }
-  #previous, #next, #home {
-    display: none;
-  }
-  #mobile-slider {
-    display: grid;
-  }
-  #shell {
-    margin: 0 auto 50px;
-    width: 450px;
-  }
-  #main-content button, #mobile-slider button {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-  #main-content button:hover, #mobile-slider button:hover {
-    background-color: rgba(192,192,192,0.3);
-  }
-
-  #home img, #home-mobile img {
-    width: 35px;
-  }
-
-  /* #trackTitle {
-    overflow: inherit;
-    white-space: inherit;
-    text-overflow: inherit;
-  } */
-  #main-content > #shell {
-    grid-area: song;
-  }
-  #album-volumes, #track-fullLyrics {
-    height: 100%;
-  }
-  #album-trackList, #track-lyrics {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    grid-gap: 35px;
-  }
-  #track-fullLyrics {
-    text-align: center;
-  }
-  #album-cover img, #track-information img {
-    width: 35%;
-  }
-  #trackTitle {
-    font-size: 1.25rem;
-    margin-block-end: 0.5rem;
-  }
-  #trackNumberVolume, #trackArtist, #trackAlbum {
-    font-size: 1rem;
-    margin-block-end: 0.5rem;
-  }
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.25rem; }
-  p { font-size: 1rem; }
-}
-
-/* For screens that are 425px wide or less */
-@media all and (max-width: 450px) {
-  #shell { width: 80%; }
-  h1 { font-size: 1.25rem; }
-  h2 { font-size: 1rem; }
-  p  { font-size: 1rem; }
+#home-mobile img {
+  padding-top: 10px;
 }

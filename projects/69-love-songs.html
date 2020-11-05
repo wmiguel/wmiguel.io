@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
     <link rel="stylesheet" href="../css/projects/69-love-songs/main.css">
+    <link rel="stylesheet" href="../css/projects/69-love-songs/main-media.css">
   </head>
   <body>
     <!-- Navbars -->
@@ -39,87 +40,86 @@
       </div>
     </nav>
 
-    <!-- Main Tracklist -->
-    <div id="album-content">
-      <div id="shell">
-        <section id="albumInfo">
-          <h1 id="albumTitle">69 Love Songs</h1>
-          <h2 id="albumArtist">The Magnetic Fields <span id="albumYear">1999</span></h2>
-        </section>
-        <section id="album-trackList">
-          <div id="album-cover">
-            <img id="album-link" src="">
-          </div>
-          <div id="album-volumes">
-            <div id="volumes">
-              <h1 id="vol-01" onclick="volume(1);" class="active">1</h1>
-              <h1 id="vol-02" onclick="volume(2);">2</h1>
-              <h1 id="vol-03" onclick="volume(3);">3</h1>
-            </div>
-            <div id="album-tracks">
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- Lyrics Section -->
-    <div id="lyrics-content">
-      <div id="main-content">
-        <div id="previous">
-          <button onclick="previousTrack();">&#10094;</button>
-        </div>
-        <div id="home">
-          <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
-        </div>
-        <div id="next">
-          <button onclick="nextTrack();">&#10095;</button>
-        </div>
+    <main id="main-container">
+      <!-- Album Section -->
+      <div id="album-content">
         <div id="shell">
-          <section id="track-lyrics">
-            <div id="track-information">
-              <img id="trackCover" src="">
-              <h2 id="trackNumberVolume"></h2>
-              <h1 id="trackTitle"></h1>
-              <h2 id="trackArtist"></h2>
-              <h2 id="trackAlbum"></h2>
+          <section id="albumInfo">
+            <h1 id="albumTitle">69 Love Songs</h1>
+            <h2 id="albumArtist">The Magnetic Fields <span id="albumYear">1999</span></h2>
+          </section>
+          <section id="album-trackList">
+            <div id="album-cover">
+              <img id="album-link" src="">
             </div>
-            <div id="track-fullLyrics"></div>
+            <div id="album-volumes">
+              <div id="volumes">
+                <h1 id="vol-01" onclick="volume(1);" class="active">1</h1>
+                <h1 id="vol-02" onclick="volume(2);">2</h1>
+                <h1 id="vol-03" onclick="volume(3);">3</h1>
+              </div>
+              <div id="album-tracks"></div>
+            </div>
           </section>
         </div>
       </div>
-      <div id="mobile-slider">
-        <div id="previous-mobile">
-          <button onclick="previousTrack();">&#10094;</button>
+      <!-- Lyrics Section -->
+      <div id="lyrics-content">
+        <div id="main-content">
+          <div id="previous">
+            <button onclick="previousTrack();">&#10094;</button>
+          </div>
+          <div id="home">
+            <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
+          </div>
+          <div id="next">
+            <button onclick="nextTrack();">&#10095;</button>
+          </div>
+          <div id="shell">
+            <section id="track-lyrics">
+              <div id="track-information">
+                <img id="trackCover" src="">
+                <h3 id="trackNumberVolume"></h3>
+                <h1 id="trackTitle"></h1>
+                <h2 id="trackArtist"></h2>
+                <h2 id="trackAlbum"></h2>
+              </div>
+              <div id="track-fullLyrics"></div>
+            </section>
+          </div>
         </div>
-        <div id="home-mobile">
-          <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
-        </div>
-        <div id="next-mobile">
-          <button onclick="nextTrack();">&#10095;</button>
+        <div id="mobile-slider">
+          <div id="previous-mobile">
+            <button onclick="previousTrack();">&#10094;</button>
+          </div>
+          <div id="home-mobile">
+            <img onclick="goHome();" src="../images/projects/69-love-songs/69ls-home.png">
+          </div>
+          <div id="next-mobile">
+            <button onclick="nextTrack();">&#10095;</button>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- Scripts -->
-    <script>
-      function myFunction() {
-        var x = document.getElementById("links-mobile");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
+      <!-- Scripts -->
+      <script>
+        function myFunction() {
+          var x = document.getElementById("links-mobile");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
         }
-      }
-    </script>
+      </script>
 
-    <!-- Handlebars & jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+      <!-- Handlebars & jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script src="../js/projects/69-love-songs/love-songs.js"></script>
-    <script src="../js/projects/69-love-songs/main.js"></script>
-
+      <script src="../js/projects/69-love-songs/love-songs.js"></script>
+      <script src="../js/projects/69-love-songs/main.js"></script>
   </body>
 
 </html>
