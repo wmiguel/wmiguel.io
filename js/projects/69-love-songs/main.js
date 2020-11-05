@@ -7,8 +7,9 @@ var lyricsTitle = document.getElementById("trackTitle");
 var lyricsArtist = document.getElementById("trackArtist");
 var trackCover = document.getElementById("trackCover");
 var lyricsText = document.getElementById("track-fullLyrics");
-var lyricsActivate = document.getElementById('lyrics-content');
 var albumDeactivate = document.getElementById('album-content');
+var lyricsActivate = document.getElementById('lyrics-content');
+var mainContent = document.getElementById('main-content');
 var previous = document.getElementById("previous");
 var next = document.getElementById("next");
 var previousMobile = document.getElementById("previous-mobile");
@@ -103,6 +104,7 @@ function trackSelected(i) {
   lyricsActivate.style.opacity = '1';
   lyricsActivate.style.height = '100%';
   lyricsActivate.style.paddingTop = '100px';
+  mainContent.style.display = 'grid';
   albumDeactivate.style.visibility = 'hidden';
   albumDeactivate.style.opacity = '0';
   albumDeactivate.style.height = '0';
@@ -261,6 +263,7 @@ function goHome() {
   lyricsActivate.style.opacity = '0';
   lyricsActivate.style.height = '0';
   lyricsActivate.style.paddingTop = '0';
+  mainContent.style.display = 'none';
   albumDeactivate.style.visibility = 'visible';
   albumDeactivate.style.opacity = '1';
   albumDeactivate.style.height = '100%';
@@ -270,10 +273,12 @@ function escapeTrack(esc) {
   if (esc.code == 'Escape') {
     var lyricsActivate = document.getElementById('lyrics-content');
     var albumDeactivate = document.getElementById('album-content');
+    var mainContent = document.getElementById('main-content');
     lyricsActivate.style.visibility = 'hidden';
     lyricsActivate.style.opacity = '0';
     lyricsActivate.style.height = '0';
     lyricsActivate.style.paddingTop = '0';
+    mainContent.style.display = 'none';
     albumDeactivate.style.visibility = 'visible';
     albumDeactivate.style.opacity = '1';
     albumDeactivate.style.height = '100%';

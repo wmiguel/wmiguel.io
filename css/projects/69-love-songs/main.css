@@ -1,5 +1,30 @@
 body {
   background-color: black;
+  color: #efefef;
+  line-height: normal;
+}
+
+h1, h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  margin-block-start: 0rem;
+  margin-block-end: 1.25rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-block-start: 0rem;
+  margin-block-end: 1.25rem;
 }
 
 #album-content {
@@ -8,21 +33,14 @@ body {
 }
 
 #lyrics-content {
-  transition: opacity 1s ease-out;
-}
-
-#shell {
-  margin: 0 auto;
-  width: 80%;
-  max-width: 1080px;
-}
-#lyrics-content {
   visibility: hidden;
   opacity: 0;
   height: 0;
+  transition: opacity 1s ease-out;
 }
+
 #main-content {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 10fr 1fr;
   grid-gap: 15px;
   text-align: center;
@@ -30,6 +48,32 @@ body {
           "prev home next"
           "song song song";
 }
+
+#shell {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1080px;
+}
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 10px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #888;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
 
 #mobile-slider {
   background-color: black;
@@ -43,25 +87,25 @@ body {
   height: 60px;
 }
 
-#previous-mobile, #next-mobile {
+#album-cover, #previous, #next, #previous-mobile, #next-mobile  {
   display: grid;
   place-items: center;
 }
 
-#home {
-  display: none;
-}
-#home-mobile {
-  margin: auto;
-}
-#albumInfo, #trackInfo {
-  margin-bottom: 2rem;
-  text-align: center;
+#album-cover {
+  display: grid;
+  place-items: center;
 }
 
-#album-trackList, #track-lyrics {
+#album-trackList {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-gap: 25px;
+}
+
+#track-lyrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
 }
 
@@ -71,9 +115,59 @@ body {
   text-align: center;
 }
 
+#album-track {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-gap: 5px;
+  cursor: pointer;
+}
+
+#track-fullLyrics {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  text-align: left;
+  margin-block-end: 0rem;
+
+  text-align: center;
+  background-color: tomato;
+}
+
+
+
+#previous {
+  grid-area: prev;
+}
+
+#next {
+  grid-area: next;
+}
+
+#home {
+  display: none;
+}
+
+#home-mobile {
+  margin: auto;
+}
+
+#albumInfo, #trackInfo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#trackInfo {
+
+}
+
 #volumes h1 {
   cursor: pointer;
   width: 50%;
+  height: 60%;
   margin: 0 auto 25px;
 }
 
@@ -89,13 +183,13 @@ body {
   background-color: #4cb9e2;
 }
 
-#album-cover {
-  display: grid;
-  place-items: center;
+#album-cover img {
+  width: 75%;
 }
 
-#album-cover img, #track-illustration img {
-  width: 75%;
+#track-illustration img, #track-information img {
+  width: 50%;
+  margin-bottom: 35px;
 }
 
 #home-mobile img {
@@ -103,30 +197,15 @@ body {
 }
 
 #album-volumes, #track-fullLyrics {
-  height: 552px;
+  /* height: 552px; */
   overflow: scroll;
 }
 
-#album-track {
-  display: grid;
-  grid-template-columns: 1fr 7fr;
-  grid-gap: 5px;
-
-  cursor: pointer;
+#trackTitle {
+  font-size: 1.5rem;
 }
 
-#track-fullLyrics {
-  display: grid;
-  grid-template-columns: 1fr;
 
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-
-  text-align: left;
-  margin-block-end: 0rem;
-  color: white;
-}
 
 #album-track p {
   font-family: 'Roboto', sans-serif;
@@ -140,11 +219,11 @@ body {
   text-overflow: ellipsis;
 }
 
-#trackTitle {
+/* #trackTitle {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
+} */
 
 #album-track:hover {
   opacity: .5;
@@ -156,73 +235,29 @@ body {
   cursor: default;
 }
 
-h1, h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  color: #efefef;
-}
-
-h1, h2, p {
-  margin-block-start: 0rem;
-  margin-block-end: 1.25rem;
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: normal;
-}
-
-h2 {
-  font-size: 1.15rem;
-}
-
-p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #efefef;
-}
-
-a {
-  color: #ef785a;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #4cb9e2;
-  text-decoration: none;
-}
-
-#previous, #next {
-  display: grid;
-  place-items: center;
-}
-
-#previous { grid-area: prev; }
-#next { grid-area: next; }
-
 #main-content button, #mobile-slider button {
   width: 50px;
   height: 50px;
   background-color: rgba(0,0,0,1);
   border: none;
-  color: white;
   font-size: 28px;
   cursor: pointer;
+  color: white;
 }
+
 #main-content button:hover, #mobile-slider button:hover {
   background-color: rgba(192,192,192,0.3);
 }
 
 /* For screens that are 768px wide or less */
-@media screen and (max-width: 1080px) {
+@media all and (max-width: 1080px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 1.15rem; }
 }
 
-/* For screens that are 768px wide or less */
-@media screen and (max-width: 980px) {
+
+@media all and (max-width: 980px) {
   #album-content, #lyrics-content {
     /* padding-top: 75px; */
     width: 100%;
@@ -255,12 +290,14 @@ a:hover {
     width: 35px;
   }
 
-  #trackTitle {
+  /* #trackTitle {
     overflow: inherit;
     white-space: inherit;
     text-overflow: inherit;
+  } */
+  #main-content > #shell {
+    grid-area: song;
   }
-  #main-content > #shell { grid-area: song; }
   #album-volumes, #track-fullLyrics { height: 100%; }
   #album-trackList, #track-lyrics {
     display: grid;
@@ -268,17 +305,17 @@ a:hover {
     grid-gap: 35px;
   }
   #track-fullLyrics { text-align: center; }
-  #album-cover img, #track-illustration img { width: 35%; }
+  #album-cover img, #track-illustration img, #track-information img {
+    width: 35%;
+  }
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.25rem; }
   p { font-size: 1rem; }
 }
 
 /* For screens that are 425px wide or less */
-@media screen and (max-width: 450px) {
-  #shell {
-    width: 80%;
-  }
+@media all and (max-width: 450px) {
+  #shell { width: 80%; }
   h1 { font-size: 1.25rem; }
   h2 { font-size: 1rem; }
   p  { font-size: 1rem; }
