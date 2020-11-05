@@ -2148,26 +2148,26 @@ var loveSongs = [
       Through the years, freely flowin'<br>
       What have you done?<br>
       Only a gun could stop these bitter tears<br>
-      [Verse 1]<br>
+      <br>
       The endless streets I walk along<br>
       You made them seem pretty<br>
       But now I dream in country songs<br>
       And wake in New York City<br>
       And the only beauty here<br>
       Is the moon seen through the tear<br>
-      [Chorus]<br>
+      <br>
       Bitter tears keep me goin'<br>
       Through the years, freely flowin'<br>
       What have you done?<br>
       Only a gun could stop these bitter tears<br>
-      [Verse 2]<br>
+      <br>
       I cry because it looks so good<br>
       I cry, why not, it's free<br>
       And there's nothing more interesting<br>
       Than crying constantly<br>
       And as I tell everyone<br>
       Crying all the time is fun<br>
-      [Chorus]<br>
+      <br>
       Bitter tears keep me goin'<br>
       Through the years, freely flowin'<br>
       What have you done?<br>
@@ -2204,7 +2204,7 @@ var loveSongs = [
       And kiss you on the neck<br>
       Well I'll turn into a silver cross<br>
       And send thee back to Heck<br>
-      [Chorus]<br>
+      <br>
       Wi' nae wee bairn ye'll me beget<br>
       Untwinkle, little ee<br>
       My ainly pang'll be regret<br>
@@ -2770,6 +2770,3 @@ var loveSongs = [
   }
 
 ];
-
-// console.log(loveSongs[1].Lyrics);
-// console.log(`file:///Users/wmiguel/Sites/wmiguel.io/` + loveSongs[1].AlbumCover);

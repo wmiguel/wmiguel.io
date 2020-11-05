@@ -3,8 +3,12 @@ var volumeOne = document.getElementById("vol-01");
 var volumeTwo = document.getElementById("vol-02");
 var volumeThree = document.getElementById("vol-03");
 var imgAlbumLink = document.getElementById("album-link");
+
 var lyricsTitle = document.getElementById("trackTitle");
+var lyricsNumberVolume = document.getElementById("trackNumberVolume");
 var lyricsArtist = document.getElementById("trackArtist");
+var lyricsAlbum = document.getElementById("trackAlbum");
+
 var trackCover = document.getElementById("trackCover");
 var lyricsText = document.getElementById("track-fullLyrics");
 var albumDeactivate = document.getElementById('album-content');
@@ -89,6 +93,7 @@ function volume(vol) {
 }
 function trackSelected(i) {
   track = loveSongs[i].TrackNumber;
+  trackVolume = loveSongs[i].Volume;
   title = loveSongs[i].Title;
   artist = loveSongs[i].Artist;
   album = loveSongs[i].Album;
@@ -96,8 +101,11 @@ function trackSelected(i) {
   cover = loveSongs[i].AlbumCover;
   lyrics = loveSongs[i].Lyrics;
 
+  lyricsNumberVolume.textContent = `Track ${track} | Volume ${trackVolume}`
   lyricsTitle.textContent = title;
-  lyricsArtist.textContent = `Track ${track} | ${artist} | ${album} (${year})`;
+  lyricsArtist.textContent = `${artist}`;
+  lyricsAlbum.textContent = `${album} (${year})`;
+
   trackCover.src = "https://wmiguel.io/" + cover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + cover;
   lyricsText.innerHTML = lyrics;
   lyricsActivate.style.visibility = 'visible';
@@ -116,8 +124,11 @@ function trackSelected(i) {
 
   document.onkeydown = function(event) {
     var e = event || window.event;
+    var lyricsNumberVolume = document.getElementById("trackNumberVolume");
     var lyricsTitle = document.getElementById("trackTitle");
     var lyricsArtist = document.getElementById("trackArtist");
+    var lyricsAlbum = document.getElementById("trackAlbum");
+
     var trackCover = document.getElementById("trackCover");
     var lyricsText = document.getElementById("track-fullLyrics");
     var previous = document.getElementById("previous");
@@ -137,8 +148,11 @@ function trackSelected(i) {
       }
       else {
         nextNum = i += 1;
+        lyricsNumberVolume.textContent = `Track ${loveSongs[i].TrackNumber} | Volume ${loveSongs[i].Volume}`;
         lyricsTitle.textContent = loveSongs[i].Title;
-        lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
+        lyricsArtist.textContent = loveSongs[i].Artist;
+        lyricsAlbum.textContent = `${loveSongs[i].Album} (${loveSongs[i].Year})`;
+
         trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
         lyricsText.innerHTML = loveSongs[i].Lyrics;
         next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
@@ -172,8 +186,11 @@ function trackSelected(i) {
       }
       else {
         nextNum = i -= 1;
+        lyricsNumberVolume.textContent = `Track ${loveSongs[i].TrackNumber} | Volume ${loveSongs[i].Volume}`;
         lyricsTitle.textContent = loveSongs[i].Title;
-        lyricsArtist.textContent = `Track ${loveSongs[i].TrackNumber} | ${loveSongs[i].Artist} | ${loveSongs[i].Album} (${loveSongs[i].Year})`;
+        lyricsArtist.textContent = loveSongs[i].Artist;
+        lyricsAlbum.textContent = `${loveSongs[i].Album} (${loveSongs[i].Year})`;
+
         trackCover.src = "https://wmiguel.io/" + loveSongs[i].AlbumCover; // "file:///Users/wmiguel/Sites/wmiguel.io/" + loveSongs[i].AlbumCover;
         lyricsText.innerHTML = loveSongs[i].Lyrics;
         next.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
