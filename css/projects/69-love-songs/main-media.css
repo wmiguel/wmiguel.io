@@ -1,3 +1,25 @@
+@media only screen and (max-height: 900px) {
+  #main-container {
+    height: auto;
+    margin: 75px 0px;
+  }
+  #lyrics-content {
+    margin: 25px 0px;
+  }
+  #track-lyrics {
+    grid-auto-rows: 75vh;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  #lyrics-content {
+    margin: 0px;
+  }
+  #track-lyrics {
+    grid-auto-rows: 450px;
+  }
+}
+
 /* For screens that are 1080px wide or less */
 @media all and (max-width: 1080px) {
   #trackTitle {
@@ -45,13 +67,7 @@
     background-color: rgba(192,192,192,0.3);
   }
 
-  #home img, #home-mobile img {
-    width: 35px;
-  }
 
-  #main-content > #shell {
-    grid-area: song;
-  }
   #album-volumes {
     height: 100%;
   }
