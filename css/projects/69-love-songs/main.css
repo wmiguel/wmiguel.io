@@ -1,6 +1,5 @@
 body {
-  /* background-color: black; */
-  background-color: tomato;
+  background-color: rgb(36, 2, 0);
   color: #efefef;
 }
 
@@ -17,7 +16,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 h3 {
@@ -27,14 +26,14 @@ h3 {
 
 p {
   font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
-  font-size: 1.25rem;
   margin-block-start: 0rem;
-  margin-block-end: 1.25rem;
+  margin-block-end: 0.25rem;
 }
 
 #main-container, #album-trackList, #album-cover, #volumes, #album-track,
-#previous, #previous-mobile, #next, #next-mobile {
+#previous, #previous-mobile, #next, #next-mobile, #mobile-slider {
   display: grid;
 }
 
@@ -44,7 +43,6 @@ p {
 }
 
 #main-container {
-  background-color: darkslategray;
   height: 100vh;
 }
 
@@ -94,11 +92,6 @@ p {
   cursor: pointer;
 }
 #album-track p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  text-align: left;
-  margin-block-end: 0rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -121,7 +114,7 @@ p {
 #main-content {
   display: none;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-areas: "prev home next" "prev song next";
+  grid-template-areas: "prev song next";
   grid-row-gap: 50px;
   text-align: center;
 }
@@ -136,11 +129,27 @@ p {
 
 #home {
   grid-area: home;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: auto;
+  width: 69%;
+}
+
+#home > p {
+  margin: auto;
+  font-family: 'Roboto Mono', monospace;
 }
 
 #home img, #home-mobile img {
   width: 35px;
   padding-top: 5px;
+  margin: auto;
 }
 
 #home-mobile {
@@ -166,7 +175,7 @@ p {
 }
 #track-information img {
   width: 50%;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 #trackTitle {
   font-size: 1.5rem;
@@ -178,9 +187,7 @@ p {
 #track-fullLyrics {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
 
-  text-align: center;
   background-color: snow;
   color: black;
   border: 50px solid snow;
@@ -214,7 +221,7 @@ p {
   height: 50px;
   background-color: rgba(0,0,0,1);
   border: none;
-  font-size: 28px;
+  font-size: 1.75rem;
   cursor: pointer;
   color: white;
 }
