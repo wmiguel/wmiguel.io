@@ -1,10 +1,10 @@
-function elementClicked(i) {
+function albumSelected(album) {
 
-  var bigOriginal = gridAlbumArt[i].Original;
-  var bigGrid = gridAlbumArt[i].Grid;
-  var bigArtist = gridAlbumArt[i].Artist;
-  var bigTitle = gridAlbumArt[i].Title;
-  var bigYear = gridAlbumArt[i].Year;
+  var bigOriginal = gridAlbumArt[album].Original;
+  var bigGrid = gridAlbumArt[album].Grid;
+  var bigArtist = gridAlbumArt[album].Artist;
+  var bigTitle = gridAlbumArt[album].Title;
+  var bigYear = gridAlbumArt[album].Year;
 
   var originalImage = document.getElementById("originalImage");
   originalImage.src = "https://wmiguel.io/" + bigOriginal;
@@ -31,29 +31,24 @@ $(document).ready(function(){
   backgroundReplace.style.backgroundImage = "url(https://wmiguel.io/" + original + ")";
 
   var gridProject = Handlebars.compile(`
-    <div class="gridProject">
-      <div id="albumArts" class="row">
-        <div id="albumOriginal" class="col-6">
-          <img id="originalImage" src="https://wmiguel.io/${original}">
-        </div>
-
-        <div id="albumGrid" class="col-6">
-          <img id="gridImage" src="https://wmiguel.io/${grid}">
-        </div>
-      </div>
+    <div id="albumOriginal">
+      <img id="originalImage" src="https://wmiguel.io/${original}">
+    </div>
+    <div id="albumGrid">
+      <img id="gridImage" src="https://wmiguel.io/${grid}">
     </div>`);
   $('#albumDisplay').append(gridProject());
 
-  for (var j = 0; j < gridAlbumArt.length; j++) {
+  for (var album = 0; album < gridAlbumArt.length; album++) {
 
-    var titleList = gridAlbumArt[j].Title;
-    var yearList = gridAlbumArt[j].Year;
-    var artistList = gridAlbumArt[j].Artist;
-    var originalList = gridAlbumArt[j].Original;
-    var gridList = gridAlbumArt[j].Grid;
+    var titleList = gridAlbumArt[album].Title;
+    var yearList = gridAlbumArt[album].Year;
+    var artistList = gridAlbumArt[album].Artist;
+    var originalList = gridAlbumArt[album].Original;
+    var gridList = gridAlbumArt[album].Grid;
 
     var gridListed = Handlebars.compile(`
-      <div id="gridListed" class="row" onclick="elementClicked(${j});">
+      <div id="gridListed" onclick="albumSelected(${album});">
         <div id="albumArt">
           <img src="https://wmiguel.io/${originalList}">
         </div>
