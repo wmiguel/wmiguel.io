@@ -7,16 +7,6 @@ var next = document.getElementById("next");
 var previousMobile = document.getElementById("previous-mobile");
 var nextMobile = document.getElementById("next-mobile");
 
-function previousOpacityFull() {
-  previous.style.opacity = 1;
-  previousMobile.style.opacity = 1;
-}
-
-function nextOpacityFull() {
-  next.style.opacity = 1;
-  nextMobile.style.opacity = 1;
-}
-
 function fullOpacity() {
   previous.style.opacity = 1;
   next.style.opacity = 1;
@@ -142,7 +132,8 @@ function trackSelected(i) {
         nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
         previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
 
-        previousOpacityFull();
+        previous.style.opacity = 1;
+        previousMobile.style.opacity = 1;
 
         if (i == 23 || i == 46 || i == 69) {
           next.style.opacity = .5;
@@ -173,7 +164,8 @@ function trackSelected(i) {
         nextMobile.innerHTML = "<button onclick='nextTrack(" + i + ");'>&#10095;</button>";
         previousMobile.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";
 
-        nextOpacityFull()
+        next.style.opacity = 1;
+        nextMobile.style.opacity = 1;
 
         if (i == 1 || i == 24 || i == 47) {
           previous.style.opacity = .5;
@@ -216,7 +208,9 @@ function previousTrack(num) {
     }
   }
 };
+
 document.addEventListener('keydown', escapeTrack);
+
 function goHome(esc) {
   fullOpacity();
   $("#track-lyrics").empty();
