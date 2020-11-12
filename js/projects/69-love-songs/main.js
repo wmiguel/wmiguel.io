@@ -104,7 +104,7 @@ function trackSelected(i) {
   lyricsActivate.style.opacity = '1';
   lyricsActivate.style.display = 'block';
   mainContent.style.display = 'grid';
-  albumDeactivate.style.visibility = 'hidden';          
+  albumDeactivate.style.visibility = 'hidden';
   albumDeactivate.style.opacity = '0';
   albumDeactivate.style.display = 'none';
   previous.innerHTML = "<button onclick='previousTrack(" + i + ");'>&#10094;</button>";

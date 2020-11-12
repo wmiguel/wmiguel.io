@@ -4,7 +4,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
 
     <title>William Miguel | Roger Ebert Reviews</title>
-    <link rel="shortcut icon" type="image/png" href="images/wm-favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/wm-favicon.png"/>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -21,10 +21,27 @@
     <link rel="stylesheet" href="../css/projects/rogerebert/main.css">
     </head>
   <body>
-    <!-- Main Elements Here -->
+    <!-- Navbars -->
     <nav class="header">
-      <h2><a href="https://wmiguel.io/">William Miguel</a> | <a href="https://wmiguel.io/projects">Projects</a> | Roger Ebert Reviews</h2>
-      <button class="about-button">i</button>
+      <div class="title">
+        <h2><a href="https://wmiguel.io/">William Miguel</a> | Graphic Design & Web Development</h2>
+      </div>
+      <div class="links">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
+    </nav>
+    <nav class="header-mobile">
+      <div class="title-mobile">
+        <h2><a href="https://wmiguel.io/">William Miguel</a></h2>
+        <button class="about-button" onclick="myFunction()">&times;</button>
+      </div>
+      <div id="links-mobile" class="links-mobile">
+        <a href="https://wmiguel.io/projects">Projects</a>
+        <a href="https://wmiguel.io/about" class="in-progress">About</a>
+        <a href="https://wmiguel.io/contact" class="in-progress">Contact</a>
+      </div>
     </nav>
 
     <!-- The Popup Modal -->
