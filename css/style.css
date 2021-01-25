@@ -117,7 +117,7 @@ a:hover {
 /* For screens that are 425px wide or less */
 @media screen and (max-width: 450px) {
   #wm-content {
-    margin: calc(75px + 5vh) auto;
+    margin: auto;
     width: 85%;
   }
   #wm-directory {
