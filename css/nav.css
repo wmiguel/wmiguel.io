@@ -4,8 +4,6 @@ html {
 }
 
 body {
-  background-color: rgba(41,61,146,.75);
-  background-image: linear-gradient(45deg, rgba(41,61,146,.75), rgba(242,105,53,.75));
   margin: 0;
   line-height: 1.5;
 }
@@ -140,6 +138,4 @@ body {
 @media screen and (max-width: 450px) {
   .header { display: none!important; }
   .header-mobile { display: block!important; }
-  #wm-content { margin: 100px auto; }
-  #wm-social { grid-template-columns: 1fr; grid-gap: 20px; }
 }

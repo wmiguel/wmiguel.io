@@ -1,6 +1,11 @@
+body {
+  background-color: rgba(41,61,146,.75);
+  background-image: linear-gradient(45deg, rgba(41,61,146,.75), rgba(242,105,53,.75));
+ }
+
 #wm-content {
   margin: auto;
-  width: 60%;
+  width: 80%;
   max-width: 1080px;
   display: grid;
   align-items: center;
@@ -13,19 +18,31 @@
   grid-gap: 25px;
 }
 
+.wm-text {
+  margin: 150px 0;
+}
+
 .in-progress {
   opacity: 50%;
   pointer-events: none;
   cursor: default;
 }
 
-h1, h2 {
+section {
+  margin-bottom: 75px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+h1, h2, h3 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   color: #efefef;
 }
 
-h1, h2, p {
+h1, h2, h3, p {
   margin-block-start: 0rem;
   margin-block-end: 1.25rem;
 }
@@ -37,6 +54,10 @@ h1 {
 
 h2 {
   font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p, a {
@@ -58,10 +79,7 @@ a:hover {
   text-decoration: none;
 }
 
-#wm-link {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-
+#wm-link, #wm-project {
   border: 2px solid #dddddd;
   border-radius: 10px;
   color: #dddddd;
@@ -69,26 +87,31 @@ a:hover {
   padding: 5px 10px;
 }
 
-#wm-link:hover {
+#wm-link:hover, #wm-project:hover {
   border: 2px solid #4cb9e2;
+  background-color: #4cb9e2;
   border-radius: 10px;
-  color: #4cb9e2;
+  color: #000000;
 }
 
-#wm-link p {
+#wm-link p, #wm-project p {
   margin-block-end: 0rem;
 }
 
-#wm-social {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+#wm-project {
+  display: flex;
   grid-gap: 15px;
-  width: 350px;
+
+  padding: 5px 10px;
+}
+
+#wm-social {
+  display: flex;
+  grid-gap: 15px;
 }
 
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 1080px) {
-  #wm-content { width: 65%; }
   h1 { font-size: 2.5rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 1.15rem; }
@@ -98,10 +121,6 @@ a:hover {
 
 /* For screens that are 768px wide or less */
 @media screen and (max-width: 768px) {
-  #wm-content {
-    margin: calc(75px + 5vh) auto;
-    width: 80%;
-  }
   #wm-directory {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -116,18 +135,24 @@ a:hover {
 
 /* For screens that are 425px wide or less */
 @media screen and (max-width: 450px) {
-  #wm-content {
-    margin: auto;
-    width: 85%;
-  }
   #wm-directory {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 25px;
+  }
+  #wm-social {
+    display: grid; 
+    grid-template-columns: 1fr;
   }
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.25rem; }
   p  { font-size: 1rem; }
   .header { display: none!important; }
   .header-mobile { display: block!important; }
+}
+
+@media screen and (max-height: 845px) {
+  #wm-content {
+    height: 100%;
+  }
 }
