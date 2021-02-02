@@ -18,7 +18,7 @@ body {
   grid-gap: 25px;
 }
 
-.wm-text {
+#wm-text {
   margin: 150px 0;
 }
 
@@ -87,6 +87,14 @@ a:hover {
   padding: 5px 10px;
 }
 
+#wm-link {
+  margin-right: 15px;
+}
+
+#wm-link:last-child {
+  margin-right: 0;
+}
+
 #wm-link:hover, #wm-project:hover {
   border: 2px solid #4cb9e2;
   background-color: #4cb9e2;
@@ -107,7 +115,6 @@ a:hover {
 
 #wm-social {
   display: flex;
-  grid-gap: 15px;
 }
 
 /* For screens that are 768px wide or less */
@@ -135,6 +142,9 @@ a:hover {
 
 /* For screens that are 425px wide or less */
 @media screen and (max-width: 450px) {
+  #wm-content {
+    height: 100%;
+  }
   #wm-directory {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -143,6 +153,13 @@ a:hover {
   #wm-social {
     display: grid; 
     grid-template-columns: 1fr;
+  }
+  #wm-link {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  #wm-link:last-child {
+    margin-bottom: 0;
   }
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.25rem; }
